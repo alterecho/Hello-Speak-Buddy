@@ -34,9 +34,8 @@ struct SubscribePlanPromptView: View {
         maketitleLabel()
         makeGraphWithProttyView().frame(width: 270.0, height: 375.0)
         makePromoTextView().opacity(0.8)
-
-        makeButton()
-          .opacity(0.8)
+        Spacer(minLength: 25.0)
+        makeSubscribeButton()
           .edgesIgnoringSafeArea([.leading, .trailing, .bottom])
           .padding(
             EdgeInsets(
@@ -57,7 +56,8 @@ struct SubscribePlanPromptView: View {
 
 extension SubscribePlanPromptView {
   private func maketitleLabel() -> some View {
-    Text("Hello\nSpeakBUDDY ").multilineTextAlignment(.center)
+    Text("Hello\nSpeakBUDDY ")
+      .multilineTextAlignment(.center)
       .font(
         Font(
           UIFont.systemFont(
@@ -90,13 +90,45 @@ extension SubscribePlanPromptView {
   }
 
   private func makePromoTextView() -> some View {
-    VStack {
+    let rgbaTop = [111, 212, 255, 255].map { Double($0 / 255.0) }
+    let rgbaBottom = [0, 117, 255, 255].map { Double($0 / 255.0) }
+    return VStack {
       Text("スピークバディで")
-      Text("レベルアップ")
+        .font(Font(UIFont(name: "HiraginoSans-W6", size: 20.0)!))
+        .kerning(-0.57)
+        .lineSpacing(15)
+        .multilineTextAlignment(.center)
+        .frame(maxWidth: .infinity, alignment: .center)
+
+      LinearGradient(
+            colors: [
+              Color(
+                red: rgbaTop[0],
+                green: rgbaTop[1],
+                blue: rgbaTop[2],
+                opacity: rgbaTop[3]),
+              Color(
+                red: rgbaBottom[0],
+                green: rgbaBottom[1],
+                blue: rgbaBottom[2],
+                opacity: rgbaBottom[3]
+              )
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+      ).frame(height: 45.0)
+      .mask {
+        Text("レベルアップ")
+          .font(Font(UIFont(name: "HiraginoSans-W6", size: 30)!))
+          .kerning(-0.57)
+          .lineSpacing(15)
+          .multilineTextAlignment(.center)
+          .frame(maxWidth: .infinity, alignment: .center)
+      }
     }
   }
   
-  private func makeButton() -> some View {
+  private func makeSubscribeButton() -> some View {
     Button {
       
     } label: {
