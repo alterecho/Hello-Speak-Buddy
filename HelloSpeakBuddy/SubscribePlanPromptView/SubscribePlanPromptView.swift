@@ -129,10 +129,38 @@ extension SubscribePlanPromptView {
   }
   
   private func makeSubscribeButton() -> some View {
-    Button {
+    let rgbaBackground = [59, 167, 255, 255].map { Double($0 / 255.0) }
+    let rgbaBorder = [255, 255, 255, 255].map { Double($0 / 255.0) }
+    return Button {
       
     } label: {
       Text("プランに登録する")
+        .font(.headline)
+        .foregroundColor(    
+          .white
+        )
+        .padding()
+        .frame(maxWidth: .infinity)
+        .background(
+          Color(
+            red: rgbaBackground[0],
+            green: rgbaBackground[1],
+            blue: rgbaBackground[2],
+            opacity: rgbaBackground[3]
+          )
+        )
+        .border(
+          Color(
+            red: rgbaBackground[0],
+            green: rgbaBackground[1],
+            blue: rgbaBackground[2],
+            opacity: rgbaBackground[3]
+          ),
+          width: 1.0
+        )
+        .cornerRadius(28.66)
+        .shadow(radius: 10.0, x: 0.0, y: 2.0)
+        .padding(.horizontal)
     }
   }
   
