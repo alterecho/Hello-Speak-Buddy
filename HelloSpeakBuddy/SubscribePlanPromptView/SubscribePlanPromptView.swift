@@ -58,6 +58,17 @@ struct SubscribePlanPromptView: View {
 extension SubscribePlanPromptView {
   private func maketitleLabel() -> some View {
     Text("Hello\nSpeakBUDDY ").multilineTextAlignment(.center)
+      .font(
+        Font(
+          UIFont.systemFont(
+            ofSize: 36.0,
+            weight: .init(700.0)
+          )
+        )
+      )
+      .frame(maxWidth: .infinity, alignment: .center)
+      .lineSpacing(10.8)
+      .multilineTextAlignment(.center)
   }
   
   private func makeGraph() -> some View {
@@ -71,7 +82,6 @@ extension SubscribePlanPromptView {
           .resizable()
           .aspectRatio(contentMode: .fit)
           .frame(width: 187.72, height: 170.0)
-          .background(Color.red)
           .offset(x: -geometry.size.width * 0.5 + 37.52,
                   y: -geometry.size.height * 0.5 + 52.15)
       }
