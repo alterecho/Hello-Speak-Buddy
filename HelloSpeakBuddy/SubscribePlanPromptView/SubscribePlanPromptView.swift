@@ -90,8 +90,6 @@ extension SubscribePlanPromptView {
   }
 
   private func makePromoTextView() -> some View {
-    let rgbaTop = [111, 212, 255, 255].map { Double($0 / 255.0) }
-    let rgbaBottom = [0, 117, 255, 255].map { Double($0 / 255.0) }
     return VStack {
       Text("スピークバディで")
         .font(Font(UIFont(name: "HiraginoSans-W6", size: 20.0)!))
@@ -102,17 +100,8 @@ extension SubscribePlanPromptView {
 
       LinearGradient(
             colors: [
-              Color(
-                red: rgbaTop[0],
-                green: rgbaTop[1],
-                blue: rgbaTop[2],
-                opacity: rgbaTop[3]),
-              Color(
-                red: rgbaBottom[0],
-                green: rgbaBottom[1],
-                blue: rgbaBottom[2],
-                opacity: rgbaBottom[3]
-              )
+              Color.fromRGBA256Color(red: 111, green: 212, blue: 255, alpha: 255),
+              Color.fromRGBA256Color(red: 0, green: 117, blue: 255, alpha: 255)
             ],
             startPoint: .top,
             endPoint: .bottom
@@ -129,8 +118,6 @@ extension SubscribePlanPromptView {
   }
   
   private func makeSubscribeButton() -> some View {
-    let rgbaBackground = [59, 167, 255, 255].map { Double($0 / 255.0) }
-    let rgbaBorder = [255, 255, 255, 255].map { Double($0 / 255.0) }
     return Button {
       
     } label: {
@@ -142,20 +129,10 @@ extension SubscribePlanPromptView {
         .padding()
         .frame(maxWidth: .infinity)
         .background(
-          Color(
-            red: rgbaBackground[0],
-            green: rgbaBackground[1],
-            blue: rgbaBackground[2],
-            opacity: rgbaBackground[3]
+          Color.fromRGBA256Color(red: 59, green: 167, blue: 255, alpha: 255)
           )
-        )
         .border(
-          Color(
-            red: rgbaBackground[0],
-            green: rgbaBackground[1],
-            blue: rgbaBackground[2],
-            opacity: rgbaBackground[3]
-          ),
+          Color.fromRGBA256Color(red: 255, green: 255, blue: 255, alpha: 255),
           width: 1.0
         )
         .cornerRadius(28.66)
@@ -169,17 +146,8 @@ extension SubscribePlanPromptView {
     let rgbaBottom = [255, 255, 255, 255].map { Double($0 / 255.0) }
     return LinearGradient(
       colors: [
-        Color(
-          red: rgbaTop[0],
-          green: rgbaTop[1],
-          blue: rgbaTop[2],
-          opacity: rgbaTop[3]),
-        Color(
-          red: rgbaBottom[0],
-          green: rgbaBottom[1],
-          blue: rgbaBottom[2],
-          opacity: rgbaBottom[3]
-        ),
+        Color.fromRGBA256Color(red: 213, green: 210, blue: 255, alpha: 255),
+        Color.fromRGBA256Color(red: 255, green: 255, blue: 255, alpha: 255)
       ],
       startPoint: .top,
       endPoint: .bottom
