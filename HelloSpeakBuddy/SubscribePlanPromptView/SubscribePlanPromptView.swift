@@ -32,14 +32,16 @@ struct SubscribePlanPromptView: View {
       makeGradientView().ignoresSafeArea()
       VStack {
         maketitleLabel()
-        makeGraphWithProttyView().frame(width: 270.0, height: 375.0)
+        Spacer().frame(height: 85.0)
+        makeGraphWithProttyView().frame(width: 270.0, height: 325.0)
+        Spacer().frame(height: 30.0)
         makePromoTextView().opacity(0.8)
-        Spacer(minLength: 25.0)
+        Spacer().frame(height: 25.0)
         makeSubscribeButton()
           .edgesIgnoringSafeArea([.leading, .trailing, .bottom])
           .padding(
             EdgeInsets(
-              top: 0.0, leading: 20.0, bottom: 54.0, trailing: 20.0
+              top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0
             )
           )
       }
@@ -71,27 +73,41 @@ extension SubscribePlanPromptView {
       .multilineTextAlignment(.center)
   }
     
-  struct GraphBarView: View {
-    @State private var label: String
-    @State private var value: Int
+  struct GraphBarItemView: View {
+    struct Item {
+      let value: Int
+      let label: String
+    }
+    private var item: Item
+    private var delay: TimeInterval
     
-    init(label: String, value: Int) {
-      self.label = label
-      self.value = value
+    init(item: Item, delay: TimeInterval) {
+      self.item = item
+      self.delay = delay
     }
     
+    @State var heightFactor = 0.0
     var body: some View {
       VStack(spacing: 7.0) {
-        Rectangle().fill(
-          LinearGradient(
-            colors: [
-              Color.fromRGBA256Color(red: 88, green: 192, blue: 255, alpha: 255),
-              Color.fromRGBA256Color(red: 31, green: 143, blue: 255, alpha: 255)
-            ],
-            startPoint: .top,
-            endPoint: .bottom
-          )).cornerRadius(2.73)
-        Text(label)
+        GeometryReader { geometry in
+          VStack {
+            Spacer()
+            Rectangle().fill(
+              LinearGradient(
+                colors: [
+                  Color.fromRGBA256Color(red: 88, green: 192, blue: 255, alpha: 255),
+                  Color.fromRGBA256Color(red: 31, green: 143, blue: 255, alpha: 255)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+              )
+            ).frame(
+              height: geometry.size.height * Double(item.value) / 100.0 * heightFactor
+            ).scaleEffect(x: 1, y: -1, anchor: .center).cornerRadius(2.73)
+          }
+        }
+        Spacer().frame(height: 7.0)
+        Text(item.label)
           .font(
             Font(
               UIFont(
@@ -99,16 +115,28 @@ extension SubscribePlanPromptView {
                 size: 12.0)!
             )
           ).lineSpacing(15)
+      }.onAppear {
+        withAnimation(.easeOut(duration: 0.75).delay(delay)) {
+          heightFactor = 1.0
+        }
       }
     }
   }
   
   private struct Graph: View {
     var body: some View {
-      HStack(spacing: 26.0) {
-        let labels = ["現在", "3ヶ月", "1年", "2年"]
-        ForEach(labels, id: \.self) { label in
-          GraphBarView(label: label, value: 12).frame(width: 48.0)
+      HStack(alignment: .bottom, spacing: 26.0) {
+        let labels = [
+          GraphBarItemView.Item(value: 25, label: "現在"),
+          GraphBarItemView.Item(value: 38, label: "3ヶ月"),
+          GraphBarItemView.Item(value: 70, label: "1年"),
+          GraphBarItemView.Item(value: 100, label: "2年")
+          ]
+        ForEach(Array(labels.enumerated()), id: \.element.label) { enumeration in
+          GraphBarItemView(
+            item: enumeration.element,
+            delay: TimeInterval(Double(enumeration.offset) * 0.25)
+          ).frame(width: 48.0)
         }
       }
     }
