@@ -70,14 +70,53 @@ extension SubscribePlanPromptView {
       .lineSpacing(10.8)
       .multilineTextAlignment(.center)
   }
+    
+  struct GraphBarView: View {
+    @State private var label: String
+    @State private var value: Int
+    
+    init(label: String, value: Int) {
+      self.label = label
+      self.value = value
+    }
+    
+    var body: some View {
+      VStack(spacing: 7.0) {
+        Rectangle().fill(
+          LinearGradient(
+            colors: [
+              Color.fromRGBA256Color(red: 88, green: 192, blue: 255, alpha: 255),
+              Color.fromRGBA256Color(red: 31, green: 143, blue: 255, alpha: 255)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+          )).cornerRadius(2.73)
+        Text(label)
+          .font(
+            Font(
+              UIFont(
+                name: "HiraginoSans-W6",
+                size: 12.0)!
+            )
+          ).lineSpacing(15)
+      }
+    }
+  }
   
-  private func makeGraph() -> some View {
-    Color(.purple).opacity(0.5)
+  private struct Graph: View {
+    var body: some View {
+      HStack(spacing: 26.0) {
+        let labels = ["現在", "3ヶ月", "1年", "2年"]
+        ForEach(labels, id: \.self) { label in
+          GraphBarView(label: label, value: 12).frame(width: 48.0)
+        }
+      }
+    }
   }
 
   private func makeGraphWithProttyView() -> some View {
     GeometryReader { geometry in
-      makeGraph().opacity(0.8).background {
+      Graph().background {
         Image("Protty")
           .resizable()
           .aspectRatio(contentMode: .fit)
@@ -142,8 +181,6 @@ extension SubscribePlanPromptView {
   }
   
   private func makeGradientView() -> some View {
-    let rgbaTop = [213, 210, 255, 255].map { Double($0 / 255.0) }
-    let rgbaBottom = [255, 255, 255, 255].map { Double($0 / 255.0) }
     return LinearGradient(
       colors: [
         Color.fromRGBA256Color(red: 213, green: 210, blue: 255, alpha: 255),
