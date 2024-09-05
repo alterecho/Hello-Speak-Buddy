@@ -89,78 +89,10 @@ extension SubscribePlanPromptView {
       .multilineTextAlignment(.center)
   }
     
-  struct GraphBarItemView: View {
-    struct Item {
-      let value: Int
-      let label: String
-    }
-    private var item: Item
-    private var delay: TimeInterval
-    
-    init(item: Item, delay: TimeInterval) {
-      self.item = item
-      self.delay = delay
-    }
-    
-    @State var heightFactor = 0.0
-    var body: some View {
-      VStack(spacing: 7.0) {
-        GeometryReader { geometry in
-          VStack {
-            Spacer()
-            Rectangle().fill(
-              LinearGradient(
-                colors: [
-                  Color.fromRGBA256Color(red: 31, green: 143, blue: 255, alpha: 1.0),
-                  Color.fromRGBA256Color(red: 88, green: 192, blue: 255, alpha: 1.0)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-              )
-            ).frame(
-              height: geometry.size.height * Double(item.value) / 100.0 * heightFactor
-            ).scaleEffect(x: 1, y: -1, anchor: .center).cornerRadius(2.73)
-          }
-        }
-        Spacer().frame(height: 7.0)
-        Text(item.label)
-          .font(
-            Font(
-              UIFont(
-                name: "HiraginoSans-W6",
-                size: 12.0)!
-            )
-          ).lineSpacing(15)
-      }.onAppear {
-        withAnimation(.easeOut(duration: 0.75).delay(delay)) {
-          heightFactor = 1.0
-        }
-      }
-    }
-  }
-  
-  private struct Graph: View {
-    var body: some View {
-      HStack(alignment: .bottom, spacing: 26.0) {
-        let labels = [
-          GraphBarItemView.Item(value: 25, label: "現在"),
-          GraphBarItemView.Item(value: 38, label: "3ヶ月"),
-          GraphBarItemView.Item(value: 70, label: "1年"),
-          GraphBarItemView.Item(value: 100, label: "2年")
-          ]
-        ForEach(Array(labels.enumerated()), id: \.element.label) { enumeration in
-          GraphBarItemView(
-            item: enumeration.element,
-            delay: TimeInterval(Double(enumeration.offset) * 0.25)
-          ).frame(width: 48.0)
-        }
-      }
-    }
-  }
 
   private func makeGraphWithProttyView() -> some View {
     GeometryReader { geometry in
-      Graph().background {
+      BarGraphView().background {
         Image("Protty")
           .resizable()
           .aspectRatio(contentMode: .fit)

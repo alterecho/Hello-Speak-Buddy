@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57207C3A2C8986FE00F7D0F8 /* BarGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57207C392C8986FE00F7D0F8 /* BarGraphView.swift */; };
 		57714E0A2C830B580015F98E /* HelloSpeakBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E092C830B580015F98E /* HelloSpeakBuddyApp.swift */; };
 		57714E0E2C830B5B0015F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57714E0D2C830B5B0015F98E /* Assets.xcassets */; };
 		57714E112C830B5B0015F98E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57714E102C830B5B0015F98E /* Preview Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57207C392C8986FE00F7D0F8 /* BarGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphView.swift; sourceTree = "<group>"; };
 		57714E062C830B580015F98E /* HelloSpeakBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSpeakBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57714E092C830B580015F98E /* HelloSpeakBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSpeakBuddyApp.swift; sourceTree = "<group>"; };
 		57714E0D2C830B5B0015F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */,
 				57714E332C8316410015F98E /* SubscribePlanPromptView.swift */,
+				57207C392C8986FE00F7D0F8 /* BarGraphView.swift */,
 				579C44052C894F260091CEB4 /* CloseButton.swift */,
 				579C44032C8849380091CEB4 /* Color+Extensions.swift */,
 			);
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57207C3A2C8986FE00F7D0F8 /* BarGraphView.swift in Sources */,
 				579C44062C894F260091CEB4 /* CloseButton.swift in Sources */,
 				57714E0A2C830B580015F98E /* HelloSpeakBuddyApp.swift in Sources */,
 				57714E382C83165A0015F98E /* SubscribePlanPromptViewModel.swift in Sources */,
