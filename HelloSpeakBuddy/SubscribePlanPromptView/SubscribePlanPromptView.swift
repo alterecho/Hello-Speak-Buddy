@@ -121,38 +121,17 @@ extension SubscribePlanPromptView {
       vibrateForSubscribeButtonTap()
     } label: {
       Text(Constant.subscribeButtonTitle)
-        .font(.headline)
-        .foregroundColor(    
-          .white
-        )
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(
-          Color.fromRGBA256Color(red: 59, green: 167, blue: 255, alpha: 1.0)
-        )
-        .cornerRadius(28.66)
-        .overlay {
-          RoundedRectangle(cornerRadius: 28.66)
-            .stroke(
-              Color.fromRGBA256Color(
-                red: 255,
-                green: 255,
-                blue: 255,
-                alpha: 1.0
-              ),
-              lineWidth: 1.0
-            )
-        }
-        .shadow(
-          color: Color.fromRGBA256Color(
-            red: 0,
-            green: 0,
-            blue: 0,
-            alpha: 0.2
-          ),
-          radius: 10.0, x: 0.0, y: 2.0)
-        .padding(.horizontal)
-    }
+    }.buttonStyle(
+      SpeakBuddy.ThemeButtonStyle()
+    ).shadow(
+      color: Color.fromRGBA256Color(
+        red: 0,
+        green: 0,
+        blue: 0,
+        alpha: 0.2
+      ),
+      radius: 10.0, x: 0.0, y: 2.0)
+    .padding(.horizontal)
   }
   
   private func makeGradientView() -> some View {
