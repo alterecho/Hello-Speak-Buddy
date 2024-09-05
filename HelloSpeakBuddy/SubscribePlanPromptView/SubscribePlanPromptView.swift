@@ -95,8 +95,8 @@ extension SubscribePlanPromptView {
             Rectangle().fill(
               LinearGradient(
                 colors: [
-                  Color.fromRGBA256Color(red: 88, green: 192, blue: 255, alpha: 255),
-                  Color.fromRGBA256Color(red: 31, green: 143, blue: 255, alpha: 255)
+                  Color.fromRGBA256Color(red: 31, green: 143, blue: 255, alpha: 1.0),
+                  Color.fromRGBA256Color(red: 88, green: 192, blue: 255, alpha: 1.0)
                 ],
                 startPoint: .top,
                 endPoint: .bottom
@@ -167,8 +167,8 @@ extension SubscribePlanPromptView {
 
       LinearGradient(
             colors: [
-              Color.fromRGBA256Color(red: 111, green: 212, blue: 255, alpha: 255),
-              Color.fromRGBA256Color(red: 0, green: 117, blue: 255, alpha: 255)
+              Color.fromRGBA256Color(red: 111, green: 212, blue: 255, alpha: 1.0),
+              Color.fromRGBA256Color(red: 0, green: 117, blue: 255, alpha: 1.0)
             ],
             startPoint: .top,
             endPoint: .bottom
@@ -196,10 +196,10 @@ extension SubscribePlanPromptView {
         .padding()
         .frame(maxWidth: .infinity)
         .background(
-          Color.fromRGBA256Color(red: 59, green: 167, blue: 255, alpha: 255)
+          Color.fromRGBA256Color(red: 59, green: 167, blue: 255, alpha: 1.0)
           )
         .border(
-          Color.fromRGBA256Color(red: 255, green: 255, blue: 255, alpha: 255),
+          Color.fromRGBA256Color(red: 255, green: 255, blue: 255, alpha: 1.0),
           width: 1.0
         )
         .cornerRadius(28.66)
@@ -211,8 +211,8 @@ extension SubscribePlanPromptView {
   private func makeGradientView() -> some View {
     return LinearGradient(
       colors: [
-        Color.fromRGBA256Color(red: 213, green: 210, blue: 255, alpha: 255),
-        Color.fromRGBA256Color(red: 255, green: 255, blue: 255, alpha: 255)
+        Color.fromRGBA256Color(red: 213, green: 210, blue: 255, alpha: 1.0),
+        Color.fromRGBA256Color(red: 255, green: 255, blue: 255, alpha: 1.0)
       ],
       startPoint: .top,
       endPoint: .bottom

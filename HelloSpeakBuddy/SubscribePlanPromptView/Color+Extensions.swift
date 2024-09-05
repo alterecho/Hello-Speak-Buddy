@@ -9,12 +9,11 @@ import SwiftUI
 import CoreGraphics
 
 extension Color {
-  static func fromRGBA256Color(red: Int, green: Int, blue: Int, alpha: Int) -> Color {
+  static func fromRGBA256Color(red: Int, green: Int, blue: Int, alpha: Double) -> Color {
     let normalizedRGBAColor = [
       red,
       green,
-      blue,
-      alpha
+      blue
     ].map {
       CGFloat($0) / 255.0
     }
@@ -22,6 +21,6 @@ extension Color {
       red: normalizedRGBAColor[0],
       green: normalizedRGBAColor[1],
       blue: normalizedRGBAColor[2]
-    ).opacity(normalizedRGBAColor[3])
+    ).opacity(alpha)
   }
 }
