@@ -27,16 +27,31 @@ struct SubscribePlanPromptView: View {
       makeGradientView().ignoresSafeArea()
       VStack {
         maketitleLabel()
-        Spacer().frame(height: 85.0)
-        makeGraphWithProttyView().frame(width: 270.0, height: 325.0)
-        Spacer().frame(height: 30.0)
+        Spacer().frame(
+          height: 85.0
+        )
+        makeGraphWithProttyView().frame(
+          width: 270.0,
+          height: 325.0
+        )
+        Spacer().frame(
+          height: 30.0
+        )
         makePromoTextView().opacity(0.8)
-        Spacer().frame(height: 25.0)
+        Spacer().frame(
+          height: 25.0
+        )
         makeSubscribeButton()
-          .edgesIgnoringSafeArea([.leading, .trailing, .bottom])
-          .padding(
+          .edgesIgnoringSafeArea([
+            .leading,
+            .trailing,
+            .bottom
+          ]).padding(
             EdgeInsets(
-              top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0
+              top: 0.0,
+              leading: 20.0,
+              bottom: 0.0,
+              trailing: 20.0
             )
           )
       }.overlay {
