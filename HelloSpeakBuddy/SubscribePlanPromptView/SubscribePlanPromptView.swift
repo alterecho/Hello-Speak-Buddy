@@ -186,7 +186,7 @@ extension SubscribePlanPromptView {
   
   private func makeSubscribeButton() -> some View {
     return Button {
-      
+      vibrateForSubscribeButtonTap()
     } label: {
       Text("プランに登録する")
         .font(.headline)
@@ -218,7 +218,13 @@ extension SubscribePlanPromptView {
       endPoint: .bottom
     )
   }
+  
+  private func vibrateForSubscribeButtonTap() {
+    let feedbackGenerator = UIImpactFeedbackGenerator(style: .soft)
+    feedbackGenerator.impactOccurred()
+  }
 }
+
 #Preview {
   SubscribePlanPromptView(
     viewModel: SubscribePlanPromptViewModel()
