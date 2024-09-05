@@ -9,22 +9,6 @@ import SwiftUI
 import Combine
 
 struct SubscribePlanPromptView: View {
-  
-  private enum Constant {
-    static let pageTitle = "Hello\nSpeakBUDDY"
-    static let levelUpText = "スピークバディで"
-    static let speakBuddyText = "レベルアップ"
-    static let subscribeButtonTitle = "プランに登録する"
-    static let closeButtonSize = CGSize(
-      width: 38.0,
-      height: 38.0
-    )
-    static let prottyOffsetFromGraph = CGSize(
-      width: -37.52,
-      height: -52.15
-    )
-  }
-  
   @State var viewModel: SubscribePlanPromptViewModel
   
   private var viewDidAppearSubject = PassthroughSubject<Void, Never>()
