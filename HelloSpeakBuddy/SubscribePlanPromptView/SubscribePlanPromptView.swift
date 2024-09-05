@@ -9,7 +9,12 @@ import SwiftUI
 import Combine
 
 struct SubscribePlanPromptView: View {
+  
   private enum Constant {
+    static let pageTitle = "Hello\nSpeakBUDDY"
+    static let levelUpText = "スピークバディで"
+    static let speakBuddyText = "レベルアップ"
+    static let subscribeButtonTitle = "プランに登録する"
     static let closeButtonSize = CGSize(
       width: 38.0,
       height: 38.0
@@ -17,11 +22,6 @@ struct SubscribePlanPromptView: View {
   }
   
   @State var viewModel: SubscribePlanPromptViewModel
-  let button = Button {
-    
-  } label: {
-    Text("Subscribe")
-  }
   
   private var viewDidAppearSubject = PassthroughSubject<Void, Never>()
   private var signupButtonTapSubject = PassthroughSubject<Void, Never>()
@@ -77,7 +77,7 @@ struct SubscribePlanPromptView: View {
 
 extension SubscribePlanPromptView {
   private func maketitleLabel() -> some View {
-    Text("Hello\nSpeakBUDDY ")
+    Text(Constant.pageTitle)
       .font(
         .system(
           size: 36,
@@ -174,7 +174,7 @@ extension SubscribePlanPromptView {
 
   private func makePromoTextView() -> some View {
     return VStack {
-      Text("スピークバディで")
+      Text(Constant.levelUpText)
         .font(Font(UIFont(name: "HiraginoSans-W6", size: 20.0)!))
         .kerning(-0.57)
         .lineSpacing(15)
@@ -190,7 +190,7 @@ extension SubscribePlanPromptView {
             endPoint: .bottom
       ).frame(height: 45.0)
       .mask {
-        Text("レベルアップ")
+        Text(Constant.speakBuddyText)
           .font(Font(UIFont(name: "HiraginoSans-W6", size: 30)!))
           .kerning(-0.57)
           .lineSpacing(15)
@@ -204,7 +204,7 @@ extension SubscribePlanPromptView {
     return Button {
       vibrateForSubscribeButtonTap()
     } label: {
-      Text("プランに登録する")
+      Text(Constant.subscribeButtonTitle)
         .font(.headline)
         .foregroundColor(    
           .white
