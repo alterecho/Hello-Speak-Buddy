@@ -19,6 +19,10 @@ struct SubscribePlanPromptView: View {
       width: 38.0,
       height: 38.0
     )
+    static let prottyOffsetFromGraph = CGSize(
+      width: -37.52,
+      height: -52.15
+    )
   }
   
   @State var viewModel: SubscribePlanPromptViewModel
@@ -91,16 +95,13 @@ extension SubscribePlanPromptView {
     
 
   private func makeGraphWithProttyView() -> some View {
-    GeometryReader { geometry in
-      BarGraphView().background {
+    BarGraphView().background {
+      GeometryReader { geometry in
         Image("Protty")
-          .resizable()
           .aspectRatio(contentMode: .fit)
           .frame(width: 187.72, height: 170.0)
-          .offset(x: -geometry.size.width * 0.5 + 37.52,
-                  y: -geometry.size.height * 0.5 + 52.15)
+          .offset(Constant.prottyOffsetFromGraph)
       }
-
     }
   }
 
