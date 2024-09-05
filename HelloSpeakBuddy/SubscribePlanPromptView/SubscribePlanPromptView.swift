@@ -207,8 +207,15 @@ extension SubscribePlanPromptView {
               ),
               lineWidth: 1.0
             )
-        }.clipped()
-        .shadow(radius: 10.0, x: 0.0, y: 2.0)
+        }
+        .shadow(
+          color: Color.fromRGBA256Color(
+            red: 0,
+            green: 0,
+            blue: 0,
+            alpha: 0.2
+          ),
+          radius: 10.0, x: 0.0, y: 2.0)
         .padding(.horizontal)
     }
   }
