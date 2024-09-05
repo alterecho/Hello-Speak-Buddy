@@ -9,6 +9,13 @@ import SwiftUI
 import Combine
 
 struct SubscribePlanPromptView: View {
+  private enum Constant {
+    static let closeButtonSize = CGSize(
+      width: 38.0,
+      height: 38.0
+    )
+  }
+  
   @State var viewModel: SubscribePlanPromptViewModel
   let button = Button {
     
@@ -44,6 +51,18 @@ struct SubscribePlanPromptView: View {
               top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0
             )
           )
+      }.overlay {
+        GeometryReader { geometry in
+          CloseButton().frame(
+            width: Constant.closeButtonSize.width,
+            height: Constant.closeButtonSize.height
+          ).offset(
+            CGSize(
+              width: geometry.size.width - Constant.closeButtonSize.width - 20.0, 
+              height: -Constant.closeButtonSize.height * 0.5 + 7.94
+            )
+          )
+        }
       }
     }.onAppear {
       viewDidAppearSubject.send()

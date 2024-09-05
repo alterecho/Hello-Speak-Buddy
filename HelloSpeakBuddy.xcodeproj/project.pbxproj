@@ -16,6 +16,7 @@
 		57714E382C83165A0015F98E /* SubscribePlanPromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */; };
 		57714E402C8413CA0015F98E /* SubscribePlanPromptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E3F2C8413CA0015F98E /* SubscribePlanPromptViewModelTests.swift */; };
 		579C44042C8849380091CEB4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C44032C8849380091CEB4 /* Color+Extensions.swift */; };
+		579C44062C894F260091CEB4 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C44052C894F260091CEB4 /* CloseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePlanPromptViewModel.swift; sourceTree = "<group>"; };
 		57714E3F2C8413CA0015F98E /* SubscribePlanPromptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePlanPromptViewModelTests.swift; sourceTree = "<group>"; };
 		579C44032C8849380091CEB4 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		579C44052C894F260091CEB4 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */,
 				57714E332C8316410015F98E /* SubscribePlanPromptView.swift */,
+				579C44052C894F260091CEB4 /* CloseButton.swift */,
 				579C44032C8849380091CEB4 /* Color+Extensions.swift */,
 			);
 			path = SubscribePlanPromptView;
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				579C44062C894F260091CEB4 /* CloseButton.swift in Sources */,
 				57714E0A2C830B580015F98E /* HelloSpeakBuddyApp.swift in Sources */,
 				57714E382C83165A0015F98E /* SubscribePlanPromptViewModel.swift in Sources */,
 				57714E342C8316410015F98E /* SubscribePlanPromptView.swift in Sources */,
