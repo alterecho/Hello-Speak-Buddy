@@ -194,12 +194,20 @@ extension SubscribePlanPromptView {
         .frame(maxWidth: .infinity)
         .background(
           Color.fromRGBA256Color(red: 59, green: 167, blue: 255, alpha: 1.0)
-          )
-        .border(
-          Color.fromRGBA256Color(red: 255, green: 255, blue: 255, alpha: 1.0),
-          width: 1.0
         )
         .cornerRadius(28.66)
+        .overlay {
+          RoundedRectangle(cornerRadius: 28.66)
+            .stroke(
+              Color.fromRGBA256Color(
+                red: 255,
+                green: 255,
+                blue: 255,
+                alpha: 1.0
+              ),
+              lineWidth: 1.0
+            )
+        }.clipped()
         .shadow(radius: 10.0, x: 0.0, y: 2.0)
         .padding(.horizontal)
     }
