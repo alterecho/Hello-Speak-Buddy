@@ -125,6 +125,9 @@ extension SubscribePlanPromptView {
       Text(Constant.subscribeButtonTitle)
     }.buttonStyle(
       SpeakBuddy.ThemeButtonStyle()
+      // Sgadow is handled here here instead of in buttonStyle,
+      // to handle case where shadows may not be present at certain
+      // placements
     ).shadow(
       color: Color.fromRGBA256Color(
         red: 0,

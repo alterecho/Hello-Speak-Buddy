@@ -37,7 +37,12 @@ extension SpeakBuddy {
               ),
               lineWidth: 1.0
             )
-        }
+        }.scaleEffect(
+          configuration.isPressed ? 0.975 : 1.0
+        ).animation(
+          .easeInOut(duration: 0.2),
+          value: configuration.isPressed
+        )
     }
   }
 }
