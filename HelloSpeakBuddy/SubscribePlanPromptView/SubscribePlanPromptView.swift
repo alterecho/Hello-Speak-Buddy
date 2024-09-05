@@ -19,7 +19,9 @@ struct SubscribePlanPromptView: View {
     viewModel.transform(
       input: SubscribePlanPromptViewModel.Input(
         viewDidAppear: viewDidAppearSubject.eraseToAnyPublisher(),
-        subscribeButtonTapPublisher: signupButtonTapSubject.eraseToAnyPublisher()))
+        subscribeButtonTapPublisher: signupButtonTapSubject.eraseToAnyPublisher()
+      )
+    )
   }
 
   var body: some View {
