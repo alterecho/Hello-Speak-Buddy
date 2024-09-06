@@ -1,43 +1,34 @@
 //
-//  Graph.swift
+//  File.swift
 //  HelloSpeakBuddy
 //
-//  Created by Vijaychandran Jayachandran on 5/9/24.
+//  Created by Vijaychandran Jayachandran on 6/9/24.
 //
 
 import SwiftUI
 
-struct BarGraphView: View {
-  var body: some View {
-    HStack(alignment: .bottom, spacing: 26.0.widthScaled) {
-      let itemModels = [
-        Self.ItemView.Model(label: "現在", value: 25),
-        Self.ItemView.Model(label: "3ヶ月", value: 38),
-        Self.ItemView.Model(label: "1年", value: 70),
-        Self.ItemView.Model(label: "2年", value: 100)
-      ]
-      ForEach(Array(itemModels.enumerated()), id: \.element.label) { enumeration in
-        Self.ItemView(
-          model: enumeration.element,
-          delay: TimeInterval(Double(enumeration.offset) * 0.25)
-        ).frame(width: 48.0.widthScaled)
-      }
-    }
-  }
-}
-
-
 extension BarGraphView {
-  enum Constant {
-    static let verticalSpacing = 7.0.heightScaled
-    static let gradientStart = Color.fromRGBA256Color(red: 31, green: 143, blue: 255, alpha: 1.0)
-    static let gradientEnd = Color.fromRGBA256Color(red: 88, green: 192, blue: 255, alpha: 1.0)
-  }
-  
   // Individual bars in BarGraphView
-  fileprivate struct ItemView: View {
+  struct ItemView: View {
+    enum Constant {
+      static let verticalSpacing = 7.0.heightScaled
+      static let gradientStart = Color.fromRGBA256Color(
+        red: 31,
+        green: 143,
+        blue: 255,
+        alpha: 1.0
+      )
+      
+      static let gradientEnd = Color.fromRGBA256Color(
+        red: 88,
+        green: 192,
+        blue: 255,
+        alpha: 1.0
+      )
+    }
+    
     // Model for the bar
-    fileprivate struct Model {
+    struct Model {
       let label: String
       let value: Int
     }
@@ -51,6 +42,7 @@ extension BarGraphView {
     }
     
     @State var heightFactor = 0.0
+    
     var body: some View {
       VStack(spacing: Constant.verticalSpacing) {
         GeometryReader { geometry in
@@ -74,15 +66,15 @@ extension BarGraphView {
             ).cornerRadius(2.73)
           }
         }
-        Spacer().frame(height: 7.0)
         Text(model.label)
           .font(
             Font(
               UIFont(
                 name: "HiraginoSans-W6",
-                size: 12.0)!
+                size: 12.0.heightScaled)!
             )
-          ).lineSpacing(15)
+          ).lineSpacing(15.heightScaled).frame(
+            width: 42.8, height: 18.0).clipped()
       }.onAppear {
         withAnimation(.easeOut(duration: 0.75).delay(delay)) {
           heightFactor = 1.0

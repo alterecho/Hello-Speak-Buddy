@@ -15,6 +15,7 @@
 		576D01062C8AEE880087C0EA /* BounceAnimationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D01052C8AEE880087C0EA /* BounceAnimationModifier.swift */; };
 		576D010A2C8B0AFD0087C0EA /* ScreenScalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D01092C8B0AFD0087C0EA /* ScreenScalable.swift */; };
 		576D010C2C8B1B4F0087C0EA /* SubscribePlanPromptView+ViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D010B2C8B1B4F0087C0EA /* SubscribePlanPromptView+ViewComponents.swift */; };
+		576D010E2C8B46D10087C0EA /* BarGraphView+ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D010D2C8B46D10087C0EA /* BarGraphView+ItemView.swift */; };
 		57714E0A2C830B580015F98E /* HelloSpeakBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E092C830B580015F98E /* HelloSpeakBuddyApp.swift */; };
 		57714E0E2C830B5B0015F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57714E0D2C830B5B0015F98E /* Assets.xcassets */; };
 		57714E112C830B5B0015F98E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57714E102C830B5B0015F98E /* Preview Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		576D01052C8AEE880087C0EA /* BounceAnimationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceAnimationModifier.swift; sourceTree = "<group>"; };
 		576D01092C8B0AFD0087C0EA /* ScreenScalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenScalable.swift; sourceTree = "<group>"; };
 		576D010B2C8B1B4F0087C0EA /* SubscribePlanPromptView+ViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubscribePlanPromptView+ViewComponents.swift"; sourceTree = "<group>"; };
+		576D010D2C8B46D10087C0EA /* BarGraphView+ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarGraphView+ItemView.swift"; sourceTree = "<group>"; };
 		57714E062C830B580015F98E /* HelloSpeakBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSpeakBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57714E092C830B580015F98E /* HelloSpeakBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSpeakBuddyApp.swift; sourceTree = "<group>"; };
 		57714E0D2C830B5B0015F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 		57207C3B2C898A3000F7D0F8 /* ComponentViews */ = {
 			isa = PBXGroup;
 			children = (
-				57207C392C8986FE00F7D0F8 /* BarGraphView.swift */,
+				576D010F2C8B47340087C0EA /* Bar graph */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -142,6 +144,15 @@
 				576D01092C8B0AFD0087C0EA /* ScreenScalable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		576D010F2C8B47340087C0EA /* Bar graph */ = {
+			isa = PBXGroup;
+			children = (
+				57207C392C8986FE00F7D0F8 /* BarGraphView.swift */,
+				576D010D2C8B46D10087C0EA /* BarGraphView+ItemView.swift */,
+			);
+			path = "Bar graph";
 			sourceTree = "<group>";
 		};
 		57714DFD2C830B580015F98E = {
@@ -356,6 +367,7 @@
 				576D00FC2C89B5860087C0EA /* SpeakBuddy+Namespace.swift in Sources */,
 				57714E382C83165A0015F98E /* SubscribePlanPromptViewModel.swift in Sources */,
 				57714E342C8316410015F98E /* SubscribePlanPromptView.swift in Sources */,
+				576D010E2C8B46D10087C0EA /* BarGraphView+ItemView.swift in Sources */,
 				576D01032C8A012B0087C0EA /* SubscribePlanPromptView+Constants.swift in Sources */,
 				576D01012C89B9D40087C0EA /* ThemeButtonStyle.swift in Sources */,
 				579C44042C8849380091CEB4 /* Color+Extensions.swift in Sources */,
