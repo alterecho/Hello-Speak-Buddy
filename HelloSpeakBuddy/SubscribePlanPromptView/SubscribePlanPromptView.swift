@@ -34,8 +34,8 @@ struct SubscribePlanPromptView: View {
           height: 85.0
         )
         makeGraphWithProttyView().frame(
-          width: 270.0,
-          height: 325.0
+          width: Constant.graphSize.width.screenScaled,
+          height: Constant.graphSize.width.screenScaled
         )
         Spacer().frame(
           height: 30.0
@@ -44,28 +44,24 @@ struct SubscribePlanPromptView: View {
         Spacer().frame(
           height: 25.0
         )
+        
         makeSubscribeButton()
           .edgesIgnoringSafeArea([
             .leading,
             .trailing,
             .bottom
           ]).padding(
-            EdgeInsets(
-              top: 0.0,
-              leading: 20.0,
-              bottom: 0.0,
-              trailing: 20.0
-            )
+             Constant.subscribeButtonPadding.screenScaled
           )
       }.overlay {
         GeometryReader { geometry in
           CloseButton().frame(
-            width: Constant.closeButtonSize.width,
-            height: Constant.closeButtonSize.height
+            width: Constant.closeButtonSize.width.screenScaled,
+            height: Constant.closeButtonSize.height.screenScaled
           ).offset(
             CGSize(
-              width: geometry.size.width - Constant.closeButtonSize.width - 20.0, 
-              height: -Constant.closeButtonSize.height * 0.5 + 7.94
+              width: geometry.size.width - Constant.closeButtonSize.width.screenScaled - 20.0,
+              height: -Constant.closeButtonSize.height.screenScaled * 0.5 + 7.94
             )
           )
         }
@@ -119,7 +115,7 @@ extension SubscribePlanPromptView {
   private func makePromoTextView() -> some View {
     return VStack {
       Text(Constant.levelUpText)
-        .font(Font(UIFont(name: "HiraginoSans-W6", size: 20.0)!))
+        .font(Font(UIFont(name: "HiraginoSans-W6", size: Constant.levelUpTextPointSize)!))
         .kerning(-0.57)
         .lineSpacing(15)
         .multilineTextAlignment(.center)
@@ -147,12 +143,7 @@ extension SubscribePlanPromptView {
         shadows may not be present at certain placements
        */
     ).shadow(
-      color: Color.fromRGBA256Color(
-        red: 0,
-        green: 0,
-        blue: 0,
-        alpha: 0.2
-      ),
+      color: Constant.subscribeButtonShadowColor,
       radius: 10.0, x: 0.0, y: 2.0)
     .padding(.horizontal)
   }
@@ -160,8 +151,8 @@ extension SubscribePlanPromptView {
   private func makeGradientView() -> some View {
     return LinearGradient(
       colors: [
-        Color.fromRGBA256Color(red: 213, green: 210, blue: 255, alpha: 1.0),
-        Color.fromRGBA256Color(red: 255, green: 255, blue: 255, alpha: 1.0)
+        Constant.backgroundGradientStartColor,
+        Constant.backgroundGradientEndColor
       ],
       startPoint: .top,
       endPoint: .bottom

@@ -13,6 +13,7 @@
 		576D01012C89B9D40087C0EA /* ThemeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D01002C89B9D40087C0EA /* ThemeButtonStyle.swift */; };
 		576D01032C8A012B0087C0EA /* SubscribePlanPromptView+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D01022C8A012B0087C0EA /* SubscribePlanPromptView+Constants.swift */; };
 		576D01062C8AEE880087C0EA /* BounceAnimationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D01052C8AEE880087C0EA /* BounceAnimationModifier.swift */; };
+		576D010A2C8B0AFD0087C0EA /* ScreenScalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D01092C8B0AFD0087C0EA /* ScreenScalable.swift */; };
 		57714E0A2C830B580015F98E /* HelloSpeakBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E092C830B580015F98E /* HelloSpeakBuddyApp.swift */; };
 		57714E0E2C830B5B0015F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57714E0D2C830B5B0015F98E /* Assets.xcassets */; };
 		57714E112C830B5B0015F98E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57714E102C830B5B0015F98E /* Preview Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		576D01002C89B9D40087C0EA /* ThemeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonStyle.swift; sourceTree = "<group>"; };
 		576D01022C8A012B0087C0EA /* SubscribePlanPromptView+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubscribePlanPromptView+Constants.swift"; sourceTree = "<group>"; };
 		576D01052C8AEE880087C0EA /* BounceAnimationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceAnimationModifier.swift; sourceTree = "<group>"; };
+		576D01092C8B0AFD0087C0EA /* ScreenScalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenScalable.swift; sourceTree = "<group>"; };
 		57714E062C830B580015F98E /* HelloSpeakBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSpeakBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57714E092C830B580015F98E /* HelloSpeakBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSpeakBuddyApp.swift; sourceTree = "<group>"; };
 		57714E0D2C830B5B0015F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		576D01082C8B0AC00087C0EA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				576D01092C8B0AFD0087C0EA /* ScreenScalable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		57714DFD2C830B580015F98E = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 			children = (
 				57714E092C830B580015F98E /* HelloSpeakBuddyApp.swift */,
 				576D00FB2C89B5860087C0EA /* SpeakBuddy+Namespace.swift */,
+				576D01082C8B0AC00087C0EA /* Protocols */,
 				576D00FA2C89B5490087C0EA /* Extensions */,
 				576D00FF2C89B9690087C0EA /* CommonViewComponents */,
 				57714E3C2C84131E0015F98E /* SubscribePlanPromptView */,
@@ -334,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57207C3A2C8986FE00F7D0F8 /* BarGraphView.swift in Sources */,
+				576D010A2C8B0AFD0087C0EA /* ScreenScalable.swift in Sources */,
 				576D01062C8AEE880087C0EA /* BounceAnimationModifier.swift in Sources */,
 				579C44062C894F260091CEB4 /* CloseButton.swift in Sources */,
 				57714E0A2C830B580015F98E /* HelloSpeakBuddyApp.swift in Sources */,
