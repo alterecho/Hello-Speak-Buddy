@@ -106,11 +106,19 @@
 		576D00FF2C89B9690087C0EA /* CommonViewComponents */ = {
 			isa = PBXGroup;
 			children = (
-				576D00F82C89A6290087C0EA /* GradientTextModifier.swift */,
 				579C44052C894F260091CEB4 /* CloseButton.swift */,
-				576D01002C89B9D40087C0EA /* ThemeButtonStyle.swift */,
+				576D01042C8AEE070087C0EA /* Styles */,
 			);
 			path = CommonViewComponents;
+			sourceTree = "<group>";
+		};
+		576D01042C8AEE070087C0EA /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				576D00F82C89A6290087C0EA /* GradientTextModifier.swift */,
+				576D01002C89B9D40087C0EA /* ThemeButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		57714DFD2C830B580015F98E = {
