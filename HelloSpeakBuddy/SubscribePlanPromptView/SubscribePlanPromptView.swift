@@ -13,6 +13,7 @@ struct SubscribePlanPromptView: View {
   
   private var viewDidAppearSubject = PassthroughSubject<Void, Never>()
   private var signupButtonTapSubject = PassthroughSubject<Void, Never>()
+  @State private var animateProtty = false
 
   init(viewModel: SubscribePlanPromptViewModel) {
     self.viewModel = viewModel
@@ -77,7 +78,6 @@ struct SubscribePlanPromptView: View {
   var activityIndicator: some View {
     return ProgressView().progressViewStyle(.circular)
   }
-  
 }
 
 extension SubscribePlanPromptView {
@@ -97,12 +97,15 @@ extension SubscribePlanPromptView {
 
   private func makeGraphWithProttyView() -> some View {
     BarGraphView().background {
-      GeometryReader { geometry in
-        Image("Protty")
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 187.72, height: 170.0)
-          .offset(Constant.prottyOffsetFromGraph)
-      }
+      Image("Protty")
+        .modifier(
+          SpeakBuddy.LivelyAnimation(
+            animate: animateProtty
+          )
+        )
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 187.72, height: 170.0)
+        .offset(Constant.prottyOffsetFromGraph)
     }
   }
 
@@ -118,16 +121,24 @@ extension SubscribePlanPromptView {
     }
   }
   
+  private func performSubscribeButtonAction() {
+    vibrateForSubscribeButtonTap()
+    animateProtty = true
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+      animateProtty = false
+    }
+  }
+    
   private func makeSubscribeButton() -> some View {
     return Button {
-      vibrateForSubscribeButtonTap()
+      performSubscribeButtonAction()
     } label: {
       Text(Constant.subscribeButtonTitle)
     }.buttonStyle(
       SpeakBuddy.ThemeButtonStyle()
-      // Sgadow is handled here here instead of in buttonStyle,
-      // to handle case where shadows may not be present at certain
-      // placements
+      /* Shadow is handled here here instead of in buttonStyle, to handle case where
+        shadows may not be present at certain placements
+       */
     ).shadow(
       color: Color.fromRGBA256Color(
         red: 0,
