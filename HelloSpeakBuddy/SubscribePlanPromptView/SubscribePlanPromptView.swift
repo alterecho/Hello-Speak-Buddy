@@ -29,13 +29,13 @@ struct SubscribePlanPromptView: View {
     ZStack {
       makeGradientView().ignoresSafeArea()
       VStack {
-        maketitleLabel()
+        makeTitleLabel()
         Spacer().frame(
           height: 85.0
         )
         makeGraphWithProttyView().frame(
-          width: Constant.graphSize.width.screenScaled,
-          height: Constant.graphSize.width.screenScaled
+          width: Constant.graphSize.width,
+          height: Constant.graphSize.width
         )
         Spacer().frame(
           height: 30.0
@@ -51,17 +51,17 @@ struct SubscribePlanPromptView: View {
             .trailing,
             .bottom
           ]).padding(
-             Constant.subscribeButtonPadding.screenScaled
+             Constant.subscribeButtonPadding
           )
       }.overlay {
         GeometryReader { geometry in
           CloseButton().frame(
-            width: Constant.closeButtonSize.width.screenScaled,
-            height: Constant.closeButtonSize.height.screenScaled
+            width: Constant.closeButtonSize.width,
+            height: Constant.closeButtonSize.height
           ).offset(
             CGSize(
-              width: geometry.size.width - Constant.closeButtonSize.width.screenScaled - 20.0,
-              height: -Constant.closeButtonSize.height.screenScaled * 0.5 + 7.94
+              width: geometry.size.width - Constant.closeButtonSize.width - 20.0,
+              height: -Constant.closeButtonSize.height * 0.5 + 7.94
             )
           )
         }

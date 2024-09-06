@@ -9,16 +9,16 @@ import SwiftUI
 
 extension SubscribePlanPromptView {
   
-  func maketitleLabel() -> some View {
+  func makeTitleLabel() -> some View {
     Text(Constant.pageTitle)
       .font(
         .system(
-          size: 36,
+          size: Constant.titleLabelFontSize,
           weight: .bold,
           design: .default
         )
       )
-      .lineSpacing(46.8 - 36.0)
+      .lineSpacing(46.8.heightScaled - Constant.titleLabelFontSize)
       .multilineTextAlignment(.center)
   }
   
@@ -47,7 +47,7 @@ extension SubscribePlanPromptView {
   func makePromoTextView() -> some View {
     return VStack {
       Text(Constant.levelUpText)
-        .font(Font(UIFont(name: "HiraginoSans-W6", size: Constant.levelUpTextPointSize)!))
+        .font(Font(UIFont(name: "HiraginoSans-W6", size: Constant.levelUpTextFontSize)!))
         .kerning(-0.57)
         .lineSpacing(15)
         .multilineTextAlignment(.center)

@@ -17,24 +17,44 @@ protocol ScreenScalable {
   var screenScaled: Self { get }
 }
 
-extension Double: ScreenScalable {
-  var screenScaled: Self {
+extension Double {
+  var widthScaled: Self {
     let screenSize = UIScreen.main.bounds.size
-    return screenSize.width / referenceSize.width
+    return screenSize.width / referenceSize.width * self
+  }
+  
+  var heightScaled: Self {
+    let screenSize = UIScreen.main.bounds.size
+    return screenSize.height / referenceSize.height * self
   }
 }
 
-extension CGFloat: ScreenScalable {
-  var screenScaled: Self {
-    return Double(self).screenScaled
+extension CGFloat {
+  var widthScaled: Self {
+    return Double(self).widthScaled
+  }
+  
+  var heightScaled: Self {
+    return Double(self).heightScaled
+  }
+}
+
+
+extension Int {
+  var widthScaled: Self {
+    return Int(Double(self).widthScaled)
+  }
+  
+  var heightScaled: Self {
+    return Int(Double(self).heightScaled)
   }
 }
 
 extension CGSize: ScreenScalable {
   var screenScaled: Self {
     return CGSize(
-      width: Double(width).screenScaled,
-      height: Double(height).screenScaled
+      width: Double(width).widthScaled,
+      height: Double(height).heightScaled
     )
   }
 }
@@ -42,10 +62,10 @@ extension CGSize: ScreenScalable {
 extension UIEdgeInsets: ScreenScalable {
   var screenScaled: Self {
     return UIEdgeInsets(
-      top: Double(top).screenScaled,
-      left: Double(left).screenScaled,
-      bottom: Double(bottom).screenScaled,
-      right: Double(right).screenScaled
+      top: Double(top).heightScaled,
+      left: Double(left).widthScaled,
+      bottom: Double(bottom).heightScaled,
+      right: Double(right).widthScaled
     )
   }
 }
@@ -53,10 +73,10 @@ extension UIEdgeInsets: ScreenScalable {
 extension EdgeInsets: ScreenScalable {
   var screenScaled: Self {
     return EdgeInsets(
-      top: Double(top).screenScaled,
-      leading: Double(leading).screenScaled,
-      bottom: Double(bottom).screenScaled,
-      trailing: Double(trailing).screenScaled
+      top: Double(top).heightScaled,
+      leading: Double(leading).widthScaled,
+      bottom: Double(bottom).heightScaled,
+      trailing: Double(trailing).widthScaled
     )
   }
 }

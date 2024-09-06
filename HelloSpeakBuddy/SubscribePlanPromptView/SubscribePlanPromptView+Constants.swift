@@ -13,7 +13,8 @@ extension SubscribePlanPromptView {
     static let levelUpText = "スピークバディで"
     static let speakBuddyText = "レベルアップ"
     static let subscribeButtonTitle = "プランに登録する"
-    static let levelUpTextPointSize = 20.0
+    static let titleLabelFontSize = 36.0.heightScaled
+    static let levelUpTextFontSize = 20.0.heightScaled
     
     static let subscribeButtonShadowColor = Color.fromRGBA256Color(
       red: 0,
@@ -39,28 +40,28 @@ extension SubscribePlanPromptView {
     static let closeButtonSize = CGSize(
       width: 38.0,
       height: 38.0
-    )
+    ) // not scaled as it would be too small
     
     static let prottyOffsetFromGraph = CGSize(
       width: -37.52,
       height: -52.15
-    )
+    ).screenScaled
     
     static let graphSize = CGSize(
       width: 270.0,
       height: 325.0
-    )
+    ).screenScaled
     
     static let prottyImageSize = CGSize(
       width: 187.72,
       height: 170.0
-    )
+    ).screenScaled
 
     static let subscribeButtonPadding = EdgeInsets(
       top: 0.0,
       leading: 20.0,
       bottom: 0.0,
       trailing: 20.0
-    )
+    ).screenScaled
   }
 }

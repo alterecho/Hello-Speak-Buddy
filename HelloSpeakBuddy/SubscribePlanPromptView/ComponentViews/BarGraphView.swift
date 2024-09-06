@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BarGraphView: View {
   var body: some View {
-    HStack(alignment: .bottom, spacing: 26.0) {
+    HStack(alignment: .bottom, spacing: 26.0.widthScaled) {
       let itemModels = [
         Self.ItemView.Model(label: "現在", value: 25),
         Self.ItemView.Model(label: "3ヶ月", value: 38),
@@ -20,7 +20,7 @@ struct BarGraphView: View {
         Self.ItemView(
           model: enumeration.element,
           delay: TimeInterval(Double(enumeration.offset) * 0.25)
-        ).frame(width: 48.0)
+        ).frame(width: 48.0.widthScaled)
       }
     }
   }
@@ -28,6 +28,12 @@ struct BarGraphView: View {
 
 
 extension BarGraphView {
+  enum Constant {
+    static let verticalSpacing = 7.0.heightScaled
+    static let gradientStart = Color.fromRGBA256Color(red: 31, green: 143, blue: 255, alpha: 1.0)
+    static let gradientEnd = Color.fromRGBA256Color(red: 88, green: 192, blue: 255, alpha: 1.0)
+  }
+  
   // Individual bars in BarGraphView
   fileprivate struct ItemView: View {
     // Model for the bar
@@ -46,22 +52,26 @@ extension BarGraphView {
     
     @State var heightFactor = 0.0
     var body: some View {
-      VStack(spacing: 7.0) {
+      VStack(spacing: Constant.verticalSpacing) {
         GeometryReader { geometry in
           VStack {
             Spacer()
             Rectangle().fill(
               LinearGradient(
                 colors: [
-                  Color.fromRGBA256Color(red: 31, green: 143, blue: 255, alpha: 1.0),
-                  Color.fromRGBA256Color(red: 88, green: 192, blue: 255, alpha: 1.0)
+                  Constant.gradientStart,
+                  Constant.gradientEnd
                 ],
                 startPoint: .top,
                 endPoint: .bottom
               )
             ).frame(
               height: geometry.size.height * Double(model.value) / 100.0 * heightFactor
-            ).scaleEffect(x: 1, y: -1, anchor: .center).cornerRadius(2.73)
+            ).scaleEffect(
+              x: 1,
+              y: -1,
+              anchor: .center
+            ).cornerRadius(2.73)
           }
         }
         Spacer().frame(height: 7.0)
