@@ -207,11 +207,11 @@
 		57714E3C2C84131E0015F98E /* SubscribePlanPromptView */ = {
 			isa = PBXGroup;
 			children = (
-				57714E332C8316410015F98E /* SubscribePlanPromptView.swift */,
-				576D010B2C8B1B4F0087C0EA /* SubscribePlanPromptView+ViewComponents.swift */,
-				576D01022C8A012B0087C0EA /* SubscribePlanPromptView+Constants.swift */,
-				57207C3B2C898A3000F7D0F8 /* ComponentViews */,
 				57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */,
+				57714E332C8316410015F98E /* SubscribePlanPromptView.swift */,
+				576D01022C8A012B0087C0EA /* SubscribePlanPromptView+Constants.swift */,
+				576D010B2C8B1B4F0087C0EA /* SubscribePlanPromptView+ViewComponents.swift */,
+				57207C3B2C898A3000F7D0F8 /* ComponentViews */,
 			);
 			path = SubscribePlanPromptView;
 			sourceTree = "<group>";
