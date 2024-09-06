@@ -96,16 +96,23 @@ extension SubscribePlanPromptView {
     
 
   private func makeGraphWithProttyView() -> some View {
-    BarGraphView().background {
-      Image("Protty")
-        .modifier(
-          SpeakBuddy.LivelyAnimation(
-            animate: animateProtty
+    GeometryReader { geometry in
+      BarGraphView().background {
+        Image("Protty")
+          .modifier(
+            SpeakBuddy.LivelyAnimation(
+              animate: animateProtty
+            )
           )
-        )
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 187.72, height: 170.0)
-        .offset(Constant.prottyOffsetFromGraph)
+          .aspectRatio(contentMode: .fit)
+          .frame(width: 187.72, height: 170.0)
+          .offset(
+            CGSize(
+              width: -geometry.size.width * 0.5 - Constant.prottyOffsetFromGraph.width,
+              height: -geometry.size.height * 0.5 - Constant.prottyOffsetFromGraph.height
+            )
+          )
+      }
     }
   }
 
