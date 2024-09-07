@@ -39,7 +39,7 @@ extension SubscribePlanPromptView {
     )
     
     static let navBarInsets = EdgeInsets(
-      top: 0.0,
+      top: 7.94,
       leading: 20.33,
       bottom: 10.0,
       trailing: 20.33

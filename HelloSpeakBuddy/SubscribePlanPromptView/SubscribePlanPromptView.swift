@@ -29,7 +29,7 @@ struct SubscribePlanPromptView: View {
     ZStack {
       makeGradientView().ignoresSafeArea()
       VStack {
-        makeNavBar()
+        makeNavBar().padding(Constant.navBarInsets.screenScaled)
         makeTitleLabel()
         Spacer()
         makeGraphWithProttyView().frame(

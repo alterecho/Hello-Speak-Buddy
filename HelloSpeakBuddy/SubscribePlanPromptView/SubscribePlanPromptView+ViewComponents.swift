@@ -15,7 +15,7 @@ extension SubscribePlanPromptView {
         width: Constant.closeButtonSize.width,
         height: Constant.closeButtonSize.height
       )
-    }.padding(Constant.navBarInsets.screenScaled)
+    }
   }
   
   func makeTitleLabel() -> some View {
