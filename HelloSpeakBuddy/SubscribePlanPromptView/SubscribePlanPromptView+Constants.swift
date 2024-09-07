@@ -43,7 +43,7 @@ extension SubscribePlanPromptView {
       leading: 20.33,
       bottom: 10.0,
       trailing: 20.33
-    ).screenScaled
+    )
 
     static let closeButtonSize = CGSize(
       width: 38.0,
@@ -53,24 +53,24 @@ extension SubscribePlanPromptView {
     static let prottyOffsetFromGraph = CGSize(
       width: -37.52,
       height: -52.15
-    ).screenScaled
+    )
     
     static let graphSize = CGSize(
       width: 270.0,
       height: 325.0
-    ).screenScaled
+    )
     
     static let prottyImageSize = CGSize(
       width: 187.72,
       height: 170.0
-    ).screenScaled
+    )
 
     static let subscribeButtonPadding = EdgeInsets(
       top: 0.0,
       leading: 20.0,
       bottom: 54.0,
       trailing: 20.0
-    ).screenScaled
+    )
   }
 }
 

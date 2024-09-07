@@ -33,8 +33,8 @@ struct SubscribePlanPromptView: View {
         makeTitleLabel()
         Spacer()
         makeGraphWithProttyView().frame(
-          width: Constant.graphSize.width,
-          height: Constant.graphSize.width
+          width: Constant.graphSize.screenScaled.width,
+          height: Constant.graphSize.screenScaled.height
         )
         Spacer().frame(
           maxHeight: 30.0
@@ -45,8 +45,8 @@ struct SubscribePlanPromptView: View {
         )
         
         makeSubscribeButton().padding(
-             Constant.subscribeButtonPadding
-          )
+          Constant.subscribeButtonPadding.screenScaled
+        )
       }
     }.onAppear {
       viewDidAppearSubject.send()

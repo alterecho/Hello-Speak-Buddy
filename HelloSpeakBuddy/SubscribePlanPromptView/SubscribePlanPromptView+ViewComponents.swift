@@ -15,7 +15,7 @@ extension SubscribePlanPromptView {
         width: Constant.closeButtonSize.width,
         height: Constant.closeButtonSize.height
       )
-    }.padding(Constant.navBarInsets)
+    }.padding(Constant.navBarInsets.screenScaled)
   }
   
   func makeTitleLabel() -> some View {
@@ -44,8 +44,8 @@ extension SubscribePlanPromptView {
           .frame(width: 187.72, height: 170.0)
           .offset(
             CGSize(
-              width: -geometry.size.width * 0.5 - Constant.prottyOffsetFromGraph.width,
-              height: -geometry.size.height * 0.5 - Constant.prottyOffsetFromGraph.height
+              width: -geometry.size.width * 0.5 - Constant.prottyOffsetFromGraph.screenScaled.width,
+              height: -geometry.size.height * 0.5 - Constant.prottyOffsetFromGraph.screenScaled.height
             )
           )
       }
