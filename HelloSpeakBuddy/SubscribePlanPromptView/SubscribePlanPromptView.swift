@@ -39,7 +39,7 @@ struct SubscribePlanPromptView: View {
         Spacer().frame(
           maxHeight: 30.0
         )
-        makePromoTextView().opacity(0.8)
+        makePromoTextView()
         Spacer().frame(
           maxHeight: 25.0
         )
