@@ -30,7 +30,8 @@ struct CloseButton: View {
             blue: 255,
             alpha: 1.0
           )
-        ).cornerRadius(geometry.size.height * 0.5).shadow(
+        ).cornerRadius(geometry.size.height * 0.5)
+        .shadow(
           color: Color.fromRGBA256Color(
             red: 0,
             green: 0,
@@ -48,6 +49,5 @@ struct CloseButton: View {
 }
 
 #Preview {
-  CloseButton()
-    .frame(width: 38.0, height: 38.0)
+  SubscribePlanPromptView(viewModel: SubscribePlanPromptViewModel())
 }

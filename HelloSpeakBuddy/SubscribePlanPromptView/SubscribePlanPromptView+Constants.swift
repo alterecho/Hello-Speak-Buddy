@@ -68,8 +68,15 @@ extension SubscribePlanPromptView {
     static let subscribeButtonPadding = EdgeInsets(
       top: 0.0,
       leading: 20.0,
-      bottom: 0.0,
+      bottom: 54.0,
       trailing: 20.0
     ).screenScaled
   }
 }
+
+#Preview {
+  SubscribePlanPromptView(
+    viewModel: SubscribePlanPromptViewModel()
+  )
+}
+

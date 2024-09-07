@@ -27,18 +27,21 @@ struct BarGraphView: View {
         value: 90
       )
     ]
+    
+    static let barSpacing: CGFloat = 26.0
+    static let barWidth: CGFloat = 48.0
   }
   
   var body: some View {
     HStack(
       alignment: .bottom,
-      spacing: 26.0.widthScaled
+      spacing: Constant.barSpacing.widthScaled
     ) {
       ForEach(Array(Constant.itemModels.enumerated()), id: \.element.label) { enumeration in
         Self.ItemView(
           model: enumeration.element,
           delay: TimeInterval(Double(enumeration.offset) * 0.25)
-        ).frame(width: 48.0.widthScaled)
+        ).frame(width: Constant.barWidth.widthScaled)
       }
     }
   }

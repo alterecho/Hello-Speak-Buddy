@@ -83,3 +83,9 @@ extension BarGraphView {
     }
   }
 }
+
+#Preview {
+  SubscribePlanPromptView(
+    viewModel: SubscribePlanPromptViewModel()
+  )
+}
