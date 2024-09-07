@@ -41,7 +41,10 @@ extension SubscribePlanPromptView {
             )
           )
           .aspectRatio(contentMode: .fit)
-          .frame(width: 187.72, height: 170.0)
+          .frame(
+            width: Constant.prottyImageSize.screenScaled.width,
+            height: Constant.prottyImageSize.screenScaled.height
+          )
           .offset(
             CGSize(
               width: -geometry.size.width * 0.5 - Constant.prottyOffsetFromGraph.screenScaled.width,
