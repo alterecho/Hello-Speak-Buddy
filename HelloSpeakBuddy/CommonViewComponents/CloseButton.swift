@@ -19,7 +19,6 @@ struct CloseButton: View {
         .font(
           .custom("HiraginoSans-W7", size: Constant.fontSize)
         )
-        .lineSpacing(26.0 - 20.0)
         .multilineTextAlignment(.center)
         .frame(
           width: geometry.size.width,

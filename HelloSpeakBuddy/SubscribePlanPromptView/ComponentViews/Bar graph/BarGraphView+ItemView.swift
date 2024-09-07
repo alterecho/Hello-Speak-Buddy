@@ -73,7 +73,7 @@ extension BarGraphView {
                 name: "HiraginoSans-W6",
                 size: 12.0.heightScaled)!
             )
-          ).lineSpacing(15.heightScaled).frame(
+          ).frame(
             width: 42.8, height: 18.0).clipped()
       }.onAppear {
         withAnimation(.easeOut(duration: 0.75).delay(delay)) {

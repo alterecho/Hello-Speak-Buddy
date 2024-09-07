@@ -29,42 +29,24 @@ struct SubscribePlanPromptView: View {
     ZStack {
       makeGradientView().ignoresSafeArea()
       VStack {
+        makeNavBar()
         makeTitleLabel()
-        Spacer().frame(
-          height: 85.0
-        )
+        Spacer()
         makeGraphWithProttyView().frame(
           width: Constant.graphSize.width,
           height: Constant.graphSize.width
         )
         Spacer().frame(
-          height: 30.0
+          maxHeight: 30.0
         )
         makePromoTextView().opacity(0.8)
         Spacer().frame(
-          height: 25.0
+          maxHeight: 25.0
         )
         
-        makeSubscribeButton()
-          .edgesIgnoringSafeArea([
-            .leading,
-            .trailing,
-            .bottom
-          ]).padding(
+        makeSubscribeButton().padding(
              Constant.subscribeButtonPadding
           )
-      }.overlay {
-        GeometryReader { geometry in
-          CloseButton().frame(
-            width: Constant.closeButtonSize.width,
-            height: Constant.closeButtonSize.height
-          ).offset(
-            CGSize(
-              width: geometry.size.width - Constant.closeButtonSize.width - 20.0,
-              height: -Constant.closeButtonSize.height * 0.5 + 7.94
-            )
-          )
-        }
       }
     }.onAppear {
       viewDidAppearSubject.send()

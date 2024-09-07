@@ -8,6 +8,15 @@
 import SwiftUI
 
 extension SubscribePlanPromptView {
+  func makeNavBar() -> some View {
+    HStack {
+      Spacer()
+      CloseButton().frame(
+        width: Constant.closeButtonSize.width,
+        height: Constant.closeButtonSize.height
+      )
+    }.padding(Constant.navBarInsets)
+  }
   
   func makeTitleLabel() -> some View {
     Text(Constant.pageTitle)
@@ -18,7 +27,6 @@ extension SubscribePlanPromptView {
           design: .default
         )
       )
-      .lineSpacing(46.8.heightScaled - Constant.titleLabelFontSize)
       .multilineTextAlignment(.center)
   }
   
@@ -48,8 +56,6 @@ extension SubscribePlanPromptView {
     return VStack {
       Text(Constant.levelUpText)
         .font(Font(UIFont(name: "HiraginoSans-W6", size: Constant.levelUpTextFontSize)!))
-        .kerning(-0.57)
-        .lineSpacing(15)
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity, alignment: .center)
       Text(Constant.speakBuddyText).modifier(SpeakBuddy.GradientTextModifier())

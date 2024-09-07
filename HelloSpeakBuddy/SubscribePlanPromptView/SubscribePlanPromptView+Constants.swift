@@ -13,6 +13,7 @@ extension SubscribePlanPromptView {
     static let levelUpText = "スピークバディで"
     static let speakBuddyText = "レベルアップ"
     static let subscribeButtonTitle = "プランに登録する"
+    
     static let titleLabelFontSize = 36.0.heightScaled
     static let levelUpTextFontSize = 20.0.heightScaled
     
@@ -37,6 +38,13 @@ extension SubscribePlanPromptView {
       alpha: 1.0
     )
     
+    static let navBarInsets = EdgeInsets(
+      top: 0.0,
+      leading: 20.33,
+      bottom: 10.0,
+      trailing: 20.33
+    ).screenScaled
+
     static let closeButtonSize = CGSize(
       width: 38.0,
       height: 38.0
