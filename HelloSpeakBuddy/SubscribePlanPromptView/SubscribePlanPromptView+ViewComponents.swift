@@ -58,7 +58,8 @@ extension SubscribePlanPromptView {
         .font(Font(UIFont(name: "HiraginoSans-W6", size: Constant.levelUpTextFontSize)!))
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity, alignment: .center)
-      Text(Constant.speakBuddyText).modifier(SpeakBuddy.GradientTextModifier())
+      Text(Constant.speakBuddyText)
+        .modifier(SpeakBuddy.GradientTextModifier())
     }
   }
   
@@ -69,12 +70,15 @@ extension SubscribePlanPromptView {
       Text(Constant.subscribeButtonTitle)
     }.buttonStyle(
       SpeakBuddy.ThemeButtonStyle()
-      /* Shadow is handled here here instead of in buttonStyle, to handle case where
-       shadows may not be present at certain placements
+      /* Shadow is handled here instead of in buttonStyle, so as to handle case where
+       shadows may not be present at certain places (not in this use-case, for now)
        */
     ).shadow(
       color: Constant.subscribeButtonShadowColor,
-      radius: 10.0, x: 0.0, y: 2.0)
+      radius: 10.0,
+      x: 0.0,
+      y: 2.0
+    )
     .padding(.horizontal)
   }
   
