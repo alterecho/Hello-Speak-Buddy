@@ -25,6 +25,11 @@ extension BarGraphView {
         blue: 255,
         alpha: 1.0
       )
+      
+      static let labelSize = CGSize(
+        width: 42.8,
+        height: 18.0
+      )
     }
     
     // Model for the bar
@@ -71,10 +76,13 @@ extension BarGraphView {
             Font(
               UIFont(
                 name: "HiraginoSans-W6",
-                size: 12.0.heightScaled)!
+                size: 12.0)!
             )
           ).frame(
-            width: 42.8, height: 18.0).clipped()
+            width: Constant.labelSize.width.widthScaled,
+            height: Constant.labelSize.width.heightScaled,
+            alignment: .center
+          ).clipped()
       }.onAppear {
         withAnimation(.easeOut(duration: 0.75).delay(delay)) {
           heightFactor = 1.0
