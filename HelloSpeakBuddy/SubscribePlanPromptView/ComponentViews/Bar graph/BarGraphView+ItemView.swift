@@ -11,7 +11,7 @@ extension BarGraphView {
   // Individual bars in BarGraphView
   struct ItemView: View {
     enum Constant {
-      static let verticalSpacing = 7.0.heightScaled
+      static let verticalSpacing = 7.0
       static let gradientStart = Color.fromRGBA256Color(
         red: 31,
         green: 143,
@@ -79,8 +79,8 @@ extension BarGraphView {
                 size: 12.0)!
             )
           ).frame(
-            width: Constant.labelSize.width.widthScaled,
-            height: Constant.labelSize.width.heightScaled,
+            width: Constant.labelSize.width.screenScaled,
+            height: Constant.labelSize.width.screenScaled,
             alignment: .center
           ).clipped()
       }.onAppear {

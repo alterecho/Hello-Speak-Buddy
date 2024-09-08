@@ -35,13 +35,13 @@ struct BarGraphView: View {
   var body: some View {
     HStack(
       alignment: .bottom,
-      spacing: Constant.barSpacing.widthScaled
+      spacing: Constant.barSpacing.screenScaled
     ) {
       ForEach(Array(Constant.itemModels.enumerated()), id: \.element.label) { enumeration in
         Self.ItemView(
           model: enumeration.element,
           delay: TimeInterval(Double(enumeration.offset) * 0.125)
-        ).frame(width: Constant.barWidth.widthScaled)
+        ).frame(width: Constant.barWidth.screenScaled)
       }
     }
   }

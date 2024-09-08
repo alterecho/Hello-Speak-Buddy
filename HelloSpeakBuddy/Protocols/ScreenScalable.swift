@@ -30,42 +30,30 @@ extension Double: ScreenScalable {
   var screenScaled: Double {
     calculateScreenScale() * self
   }
-  
-  var widthScaled: Self {
-    return screenScaled
-  }
-  
-  var heightScaled: Self {
-    return screenScaled
-  }
 }
 
-extension CGFloat {
-  var widthScaled: Self {
-    return Double(self).widthScaled
-  }
-  
-  var heightScaled: Self {
-    return Double(self).heightScaled
+extension CGFloat: ScreenScalable {
+  var screenScaled: CGFloat {
+    return Double(self).screenScaled
   }
 }
 
 
 extension Int {
   var widthScaled: Self {
-    return Int(Double(self).widthScaled)
+    return Int(Double(self).screenScaled)
   }
   
   var heightScaled: Self {
-    return Int(Double(self).heightScaled)
+    return Int(Double(self).screenScaled)
   }
 }
 
 extension CGSize: ScreenScalable {
   var screenScaled: Self {
     return CGSize(
-      width: Double(width).widthScaled,
-      height: Double(height).heightScaled
+      width: Double(width).screenScaled,
+      height: Double(height).screenScaled
     )
   }
 }
@@ -73,10 +61,10 @@ extension CGSize: ScreenScalable {
 extension UIEdgeInsets: ScreenScalable {
   var screenScaled: Self {
     return UIEdgeInsets(
-      top: Double(top).heightScaled,
-      left: Double(left).widthScaled,
-      bottom: Double(bottom).heightScaled,
-      right: Double(right).widthScaled
+      top: Double(top).screenScaled,
+      left: Double(left).screenScaled,
+      bottom: Double(bottom).screenScaled,
+      right: Double(right).screenScaled
     )
   }
 }
@@ -84,10 +72,10 @@ extension UIEdgeInsets: ScreenScalable {
 extension EdgeInsets: ScreenScalable {
   var screenScaled: Self {
     return EdgeInsets(
-      top: Double(top).heightScaled,
-      leading: Double(leading).widthScaled,
-      bottom: Double(bottom).heightScaled,
-      trailing: Double(trailing).widthScaled
+      top: Double(top).screenScaled,
+      leading: Double(leading).screenScaled,
+      bottom: Double(bottom).screenScaled,
+      trailing: Double(trailing).screenScaled
     )
   }
 }
