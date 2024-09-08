@@ -40,7 +40,7 @@ struct BarGraphView: View {
       ForEach(Array(Constant.itemModels.enumerated()), id: \.element.label) { enumeration in
         Self.ItemView(
           model: enumeration.element,
-          delay: TimeInterval(Double(enumeration.offset) * 0.25)
+          delay: TimeInterval(Double(enumeration.offset) * 0.125)
         ).frame(width: Constant.barWidth.widthScaled)
       }
     }

@@ -46,7 +46,7 @@ extension BarGraphView {
       self.delay = delay
     }
     
-    @State var heightFactor = 0.0
+    @State private var heightFactor = 0.0
     
     var body: some View {
       VStack(spacing: Constant.verticalSpacing) {
@@ -84,7 +84,7 @@ extension BarGraphView {
             alignment: .center
           ).clipped()
       }.onAppear {
-        withAnimation(.easeOut(duration: 0.75).delay(delay)) {
+        withAnimation(.easeOut(duration: 0.625).delay(delay)) {
           heightFactor = 1.0
         }
       }
