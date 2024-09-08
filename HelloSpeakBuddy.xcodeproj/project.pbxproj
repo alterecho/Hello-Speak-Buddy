@@ -95,12 +95,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		57207C3B2C898A3000F7D0F8 /* ComponentViews */ = {
+		57056DDE2C8DFE62000FE3EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				579C44052C894F260091CEB4 /* CloseButton.swift */,
 				576D010F2C8B47340087C0EA /* Bar graph */,
 			);
-			path = ComponentViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		576D00FA2C89B5490087C0EA /* Extensions */ = {
@@ -111,14 +112,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		576D00FF2C89B9690087C0EA /* CommonViewComponents */ = {
+		576D00FF2C89B9690087C0EA /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				579C44052C894F260091CEB4 /* CloseButton.swift */,
+				57056DDE2C8DFE62000FE3EF /* Views */,
 				576D01072C8AEE9E0087C0EA /* Animations */,
 				576D01042C8AEE070087C0EA /* Styles */,
 			);
-			path = CommonViewComponents;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		576D01042C8AEE070087C0EA /* Styles */ = {
@@ -182,8 +183,8 @@
 				576D00FB2C89B5860087C0EA /* SpeakBuddy+Namespace.swift */,
 				576D01082C8B0AC00087C0EA /* Protocols */,
 				576D00FA2C89B5490087C0EA /* Extensions */,
-				576D00FF2C89B9690087C0EA /* CommonViewComponents */,
-				57714E3C2C84131E0015F98E /* SubscribePlanPromptView */,
+				576D00FF2C89B9690087C0EA /* Common */,
+				57714E3C2C84131E0015F98E /* SubscribePlanPromptScreen */,
 				57714E0D2C830B5B0015F98E /* Assets.xcassets */,
 				57714E0F2C830B5B0015F98E /* Preview Content */,
 			);
@@ -215,16 +216,15 @@
 			path = HelloSpeakBuddyUITests;
 			sourceTree = "<group>";
 		};
-		57714E3C2C84131E0015F98E /* SubscribePlanPromptView */ = {
+		57714E3C2C84131E0015F98E /* SubscribePlanPromptScreen */ = {
 			isa = PBXGroup;
 			children = (
-				57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */,
 				57714E332C8316410015F98E /* SubscribePlanPromptView.swift */,
 				576D01022C8A012B0087C0EA /* SubscribePlanPromptView+Constants.swift */,
 				576D010B2C8B1B4F0087C0EA /* SubscribePlanPromptView+ViewComponents.swift */,
-				57207C3B2C898A3000F7D0F8 /* ComponentViews */,
+				57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */,
 			);
-			path = SubscribePlanPromptView;
+			path = SubscribePlanPromptScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
