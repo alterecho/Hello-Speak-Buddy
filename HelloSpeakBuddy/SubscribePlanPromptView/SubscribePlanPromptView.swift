@@ -36,13 +36,9 @@ struct SubscribePlanPromptView: View {
           width: Constant.graphSize.screenScaled.width,
           height: Constant.graphSize.screenScaled.height
         )
-        Spacer().frame(
-          maxHeight: 30.0
-        )
+        Spacer()
         makePromoTextView()
-        Spacer().frame(
-          maxHeight: 25.0
-        )
+        Spacer()
         
         makeSubscribeButton().padding(
           Constant.subscribeButtonPadding.screenScaled

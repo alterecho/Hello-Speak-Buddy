@@ -14,8 +14,8 @@ extension SubscribePlanPromptView {
     static let speakBuddyText = "レベルアップ"
     static let subscribeButtonTitle = "プランに登録する"
     
-    static let titleLabelFontSize = 36.0.heightScaled
-    static let levelUpTextFontSize = 20.0.heightScaled
+    static let titleLabelFontSize = 36.0
+    static let levelUpTextFontSize = 20.0
     
     static let subscribeButtonShadowColor = Color.fromRGBA256Color(
       red: 0,
