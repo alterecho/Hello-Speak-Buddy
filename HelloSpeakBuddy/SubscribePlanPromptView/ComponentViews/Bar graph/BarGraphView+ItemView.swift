@@ -49,6 +49,23 @@ extension BarGraphView {
     
     @State private var heightFactor = 0.0
     
+    struct RoundedCornerRectangle: Shape {
+      
+      let cornersToRound: UIRectCorner
+      let cornerRadii: CGSize
+      
+      func path(in rect: CGRect) -> Path {
+        let uiPath = UIBezierPath(
+          roundedRect: rect,
+          byRoundingCorners: cornersToRound,
+          cornerRadii: cornerRadii
+        )
+        
+        return Path(uiPath.cgPath)
+      }
+      
+      
+    }
     var body: some View {
       VStack(spacing: Constant.verticalSpacing.screenScaled) {
         GeometryReader { geometry in
@@ -65,11 +82,13 @@ extension BarGraphView {
               )
             ).frame(
               height: geometry.size.height * Double(model.value) / 100.0 * heightFactor
-            ).scaleEffect(
+            )
+            .clipShape(RoundedCornerRectangle(cornersToRound: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 2.73, height: 2.73)))
+            .scaleEffect(
               x: 1,
               y: -1,
               anchor: .center
-            ).cornerRadius(2.73)
+            )
           }
         }
         Text(model.label)
