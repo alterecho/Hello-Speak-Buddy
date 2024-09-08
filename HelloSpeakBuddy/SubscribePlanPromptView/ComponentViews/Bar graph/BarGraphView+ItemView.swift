@@ -26,6 +26,7 @@ extension BarGraphView {
         alpha: 1.0
       )
       
+      static let labelFontSize = 12.0
       static let labelSize = CGSize(
         width: 42.8,
         height: 18.0
@@ -49,7 +50,7 @@ extension BarGraphView {
     @State private var heightFactor = 0.0
     
     var body: some View {
-      VStack(spacing: Constant.verticalSpacing) {
+      VStack(spacing: Constant.verticalSpacing.screenScaled) {
         GeometryReader { geometry in
           VStack {
             Spacer()
@@ -76,7 +77,7 @@ extension BarGraphView {
             Font(
               UIFont(
                 name: "HiraginoSans-W6",
-                size: 12.0)!
+                size: Constant.labelFontSize.screenScaled)!
             )
           ).frame(
             width: Constant.labelSize.width.screenScaled,

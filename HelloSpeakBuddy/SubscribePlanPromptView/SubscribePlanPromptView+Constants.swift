@@ -41,14 +41,14 @@ extension SubscribePlanPromptView {
     static let navBarInsets = EdgeInsets(
       top: 7.94,
       leading: 20.33,
-      bottom: 10.0,
+      bottom: 0.0,
       trailing: 20.33
     )
 
     static let closeButtonSize = CGSize(
       width: 38.0,
       height: 38.0
-    ) // not scaled as it would be too small
+    )
     
     static let prottyOffsetFromGraph = CGSize(
       width: -37.52,

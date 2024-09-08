@@ -40,7 +40,7 @@ extension SpeakBuddy {
         .font(
           .custom(
             "HiraginoSans-W6",
-            size: 16.0.screenScaled
+            size: Constant.fontSize.screenScaled
           )
         )
         .foregroundStyle(Constant.textColor)

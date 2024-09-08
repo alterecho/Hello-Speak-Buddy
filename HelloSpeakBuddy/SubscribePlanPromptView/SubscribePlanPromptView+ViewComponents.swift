@@ -12,8 +12,8 @@ extension SubscribePlanPromptView {
     HStack {
       Spacer()
       CloseButton().frame(
-        width: Constant.closeButtonSize.width,
-        height: Constant.closeButtonSize.height
+        width: Constant.closeButtonSize.screenScaled.width,
+        height: Constant.closeButtonSize.screenScaled.height
       )
     }
   }
@@ -22,7 +22,7 @@ extension SubscribePlanPromptView {
     Text(Constant.pageTitle)
       .font(
         .system(
-          size: Constant.titleLabelFontSize,
+          size: Constant.titleLabelFontSize.screenScaled,
           weight: .bold,
           design: .default
         )
@@ -95,4 +95,10 @@ extension SubscribePlanPromptView {
       endPoint: .bottom
     )
   }
+}
+
+#Preview {
+  SubscribePlanPromptView(
+    viewModel: SubscribePlanPromptViewModel()
+  )
 }
