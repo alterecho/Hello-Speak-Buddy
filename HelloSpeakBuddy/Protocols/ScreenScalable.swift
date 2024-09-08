@@ -14,11 +14,9 @@ private let referenceSize = CGSize(
 )
 
 func calculateDesignScale(forSize size: CGSize) -> CGFloat {
-  let dimension = min(size.width, size.height)
-  let referenceDimension = min(referenceSize.width, referenceSize.height)
-  let scale = (size.width * size.height) / (referenceSize.width * referenceSize.height)
+  let dimension = max(size.width, size.height)
+  let referenceDimension = max(referenceSize.width, referenceSize.height)
   return dimension / referenceDimension
-  return scale//dimension / referenceDimension
 }
 
 protocol ScreenScalable {
@@ -31,7 +29,6 @@ private extension ScreenScalable {
     return calculateDesignScale(forSize: screenSize)
   }
 }
-
 
 extension Double: ScreenScalable {
   var screenScaled: Double {
