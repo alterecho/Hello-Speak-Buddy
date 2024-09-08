@@ -34,7 +34,7 @@ extension SubscribePlanPromptView {
   func makeGraphWithProttyView() -> some View {
     GeometryReader { geometry in
       BarGraphView().background {
-        Image("Protty")
+        Image("Protty").resizable()
           .modifier(
             SpeakBuddy.LivelyAnimation(
               animate: animateProtty
