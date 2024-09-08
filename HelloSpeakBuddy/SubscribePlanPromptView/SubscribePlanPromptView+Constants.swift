@@ -71,6 +71,10 @@ extension SubscribePlanPromptView {
       bottom: 54.0,
       trailing: 20.0
     )
+    
+    static let title_ProttySpacing = 32.86
+    static let graph_PromoLabelSpacing = 30.0
+    static let promoLabel_ButtonSpacing = 25.0
   }
 }
 

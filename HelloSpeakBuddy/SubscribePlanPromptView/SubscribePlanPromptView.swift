@@ -31,14 +31,20 @@ struct SubscribePlanPromptView: View {
       VStack {
         makeNavBar().padding(Constant.navBarInsets.screenScaled)
         makeTitleLabel()
-        Spacer()
+        Spacer(
+          minLength: Constant.title_ProttySpacing.screenScaled
+        )
         makeGraphWithProttyView().frame(
           width: Constant.graphSize.screenScaled.width,
           height: Constant.graphSize.screenScaled.height
         )
-        Spacer()
+        Spacer(
+          minLength: Constant.graph_PromoLabelSpacing.screenScaled
+        )
         makePromoTextView()
-        Spacer()
+        Spacer(
+          minLength: Constant.promoLabel_ButtonSpacing.screenScaled
+        )
         
         makeSubscribeButton().padding(
           Constant.subscribeButtonPadding.screenScaled
