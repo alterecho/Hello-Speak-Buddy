@@ -44,6 +44,7 @@ struct CloseButton: View {
             size: Constant.fontSize
           )
         )
+        .baselineOffset(4.0)
         .foregroundStyle(Constant.textColor)
         .frame(
           width: geometry.size.width,
