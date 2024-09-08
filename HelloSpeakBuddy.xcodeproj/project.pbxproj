@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57056DE02C8E0092000FE3EF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 57056DDF2C8E0092000FE3EF /* Localizable.xcstrings */; };
 		57207C3A2C8986FE00F7D0F8 /* BarGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57207C392C8986FE00F7D0F8 /* BarGraphView.swift */; };
 		576D00F92C89A6290087C0EA /* GradientTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D00F82C89A6290087C0EA /* GradientTextModifier.swift */; };
 		576D00FC2C89B5860087C0EA /* SpeakBuddy+Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D00FB2C89B5860087C0EA /* SpeakBuddy+Namespace.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57056DDF2C8E0092000FE3EF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = HelloSpeakBuddy/Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
 		57207C392C8986FE00F7D0F8 /* BarGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphView.swift; sourceTree = "<group>"; };
 		576D00F82C89A6290087C0EA /* GradientTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTextModifier.swift; sourceTree = "<group>"; };
 		576D00FB2C89B5860087C0EA /* SpeakBuddy+Namespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeakBuddy+Namespace.swift"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				576D00FF2C89B9690087C0EA /* Common */,
 				57714E3C2C84131E0015F98E /* SubscribePlanPromptScreen */,
 				57714E0D2C830B5B0015F98E /* Assets.xcassets */,
+				57056DDF2C8E0092000FE3EF /* Localizable.xcstrings */,
 				57714E0F2C830B5B0015F98E /* Preview Content */,
 			);
 			path = HelloSpeakBuddy;
@@ -314,6 +317,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 57714DFD2C830B580015F98E;
 			productRefGroup = 57714E072C830B580015F98E /* Products */;
@@ -334,6 +338,7 @@
 			files = (
 				57714E112C830B5B0015F98E /* Preview Assets.xcassets in Resources */,
 				57714E0E2C830B5B0015F98E /* Assets.xcassets in Resources */,
+				57056DE02C8E0092000FE3EF /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,19 +11,19 @@ struct BarGraphView: View {
   private enum Constant {
     static let itemModels = [
       BarGraphView.ItemView.Model(
-        label: "現在",
+        label: "barLabel1",
         value: 25
       ),
       BarGraphView.ItemView.Model(
-        label: "3ヶ月",
+        label: "barLabel2",
         value: 38
       ),
       BarGraphView.ItemView.Model(
-        label: "1年",
+        label: "barLabel3",
         value: 70
       ),
       BarGraphView.ItemView.Model(
-        label: "2年",
+        label: "barLabel4",
         value: 95
       )
     ]

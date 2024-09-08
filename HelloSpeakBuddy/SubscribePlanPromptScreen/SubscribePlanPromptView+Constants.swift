@@ -8,12 +8,7 @@
 import SwiftUI
 
 extension SubscribePlanPromptView {
-  enum Constant {
-    static let pageTitle = "Hello\nSpeakBUDDY"
-    static let levelUpText = "スピークバディで"
-    static let speakBuddyText = "レベルアップ"
-    static let subscribeButtonTitle = "プランに登録する"
-    
+  enum Constant {    
     static let titleLabelFontSize = 36.0
     static let levelUpTextFontSize = 20.0
     
