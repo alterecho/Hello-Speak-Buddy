@@ -30,24 +30,31 @@ struct SubscribePlanPromptView: View {
       makeGradientView().ignoresSafeArea()
       VStack {
         Spacer()
-          .frame(minHeight: 7.94.screenScaled, maxHeight: 7.94.screenScaled)
+          .frame(height: 7.94.screenScaled)
         makeNavBar()
-          .padding(Constant.navBarInsets)
+          .padding(Constant.navBarInsets.screenScaled)
+        Spacer()
+          .frame(height: 10.0.screenScaled).background(Color.orange)
+
         makeTitleLabel()
         Spacer()
-          .frame(maxHeight: Constant.title_ProttySpacing.screenScaled)
+          .frame(height: 85.0.screenScaled)
         makeGraphWithProttyView()
           .padding(Constant.graphPadding.screenScaled)
         Spacer()
-          .frame(maxHeight: Constant.graph_PromoLabelSpacing.screenScaled)
+          .frame(height: 30.0.screenScaled)
         makePromoTextView()
         Spacer()
-          .frame(maxHeight: Constant.promoLabel_ButtonSpacing.screenScaled)
+          .frame(height: 25.0.screenScaled)
         
         makeSubscribeButton().padding(
           Constant.subscribeButtonPadding.screenScaled
         )
+        Spacer().frame(height: 54.0.screenScaled).background {
+          Color.red
+        }
       }
+      .ignoresSafeArea(edges: [.bottom])
     }.onAppear {
       viewDidAppearSubject.send()
     }

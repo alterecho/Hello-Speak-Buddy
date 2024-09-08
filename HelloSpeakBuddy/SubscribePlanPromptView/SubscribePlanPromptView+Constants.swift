@@ -70,11 +70,11 @@ extension SubscribePlanPromptView {
     static let subscribeButtonPadding = EdgeInsets(
       top: 0.0,
       leading: 20.0,
-      bottom: 54.0,
+      bottom: 0.0,
       trailing: 20.0
     )
     
-    static let title_ProttySpacing = 85.0
+    static let title_ProttySpacing = 32.85
     static let graph_PromoLabelSpacing = 30.0
     static let promoLabel_ButtonSpacing = 25.0
   }

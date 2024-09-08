@@ -24,7 +24,7 @@ struct BarGraphView: View {
       ),
       BarGraphView.ItemView.Model(
         label: "2年",
-        value: 90
+        value: 95
       )
     ]
     
@@ -33,17 +33,21 @@ struct BarGraphView: View {
   }
   
   var body: some View {
-    HStack(
-      alignment: .bottom,
-      spacing: Constant.barSpacing.screenScaled
-    ) {
-      ForEach(Array(Constant.itemModels.enumerated()), id: \.element.label) { enumeration in
-        Self.ItemView(
-          model: enumeration.element,
-          delay: TimeInterval(Double(enumeration.offset) * 0.125)
-        ).frame(width: Constant.barWidth.screenScaled)
+    GeometryReader { geometry in
+      let scale = calculateDesignScale(forSize: UIScreen.main.bounds.size)
+      HStack(
+        alignment: .bottom,
+        spacing: Constant.barSpacing * scale
+      ) {
+        ForEach(Array(Constant.itemModels.enumerated()), id: \.element.label) { enumeration in
+          Self.ItemView(
+            model: enumeration.element,
+            delay: TimeInterval(Double(enumeration.offset) * 0.125)
+          ).frame(width: Constant.barWidth * scale)
+        }
       }
     }
+   
   }
 }
 

@@ -33,6 +33,8 @@ extension SubscribePlanPromptView {
   
   func makeGraphWithProttyView() -> some View {
     GeometryReader { geometry in
+      let scale = calculateDesignScale(forSize: UIScreen.main.bounds.size)
+      let prottyImageSize = CGSize(width: Constant.prottyImageSize.width * scale, height: Constant.prottyImageSize.height * scale)
       BarGraphView().background {
         Image("Protty").resizable()
           .modifier(
@@ -42,13 +44,13 @@ extension SubscribePlanPromptView {
           )
           .aspectRatio(contentMode: .fit)
           .frame(
-            width: Constant.prottyImageSize.screenScaled.width,
-            height: Constant.prottyImageSize.screenScaled.height
+            width: prottyImageSize.width,
+            height: prottyImageSize.height
           )
           .offset(
             CGSize(
-              width: -geometry.size.width * 0.5 - Constant.prottyOffsetFromGraph.screenScaled.width,
-              height: -geometry.size.height * 0.5 - Constant.prottyOffsetFromGraph.screenScaled.height
+              width: -geometry.size.width * 0.5 - Constant.prottyOffsetFromGraph.width * scale,
+              height: -geometry.size.height * 0.5 - Constant.prottyOffsetFromGraph.height * scale
             )
           )
       }
@@ -82,7 +84,8 @@ extension SubscribePlanPromptView {
       /* Shadow is handled here instead of in buttonStyle, so as to handle case where
        shadows may not be present at certain places (not in this use-case, for now)
        */
-    ).shadow(
+    )
+    .shadow(
       color: Constant.subscribeButtonShadowColor,
       radius: 10.0,
       x: 0.0,
