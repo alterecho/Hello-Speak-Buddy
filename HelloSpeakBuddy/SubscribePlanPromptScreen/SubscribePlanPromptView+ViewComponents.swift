@@ -33,27 +33,33 @@ extension SubscribePlanPromptView {
   
   func makeGraphWithProttyView() -> some View {
     GeometryReader { geometry in
-      let scale = calculateDesignScale(forSize: UIScreen.main.bounds.size)
-      let prottyImageSize = CGSize(width: Constant.prottyImageSize.width * scale, height: Constant.prottyImageSize.height * scale)
-      BarGraphView().background {
-        Image("Protty").resizable()
-          .modifier(
-            SpeakBuddy.LivelyAnimation(
-              animate: animateProtty
+      VStack {
+        let scale = calculateDesignScale(forSize: UIScreen.main.bounds.size)
+        let prottyImageSize = CGSize(width: Constant.prottyImageSize.width * scale, height: Constant.prottyImageSize.height * scale)
+        BarGraphView().background {
+          Image("Protty").resizable()
+            .modifier(
+              SpeakBuddy.LivelyAnimation(
+                animate: animateProtty
+              )
             )
-          )
-          .aspectRatio(contentMode: .fit)
-          .frame(
-            width: prottyImageSize.width,
-            height: prottyImageSize.height
-          )
-          .offset(
-            CGSize(
-              width: -geometry.size.width * 0.5 - Constant.prottyOffsetFromGraph.width * scale,
-              height: -geometry.size.height * 0.5 - Constant.prottyOffsetFromGraph.height * scale
+            .aspectRatio(contentMode: .fit)
+            .frame(
+              width: prottyImageSize.width,
+              height: prottyImageSize.height
             )
-          )
+            .offset(
+              CGSize(
+                width: -geometry.size.width * 0.5 - Constant.prottyOffsetFromGraph.width * scale,
+                height: -geometry.size.height * 0.5 - Constant.prottyOffsetFromGraph.height * scale
+              )
+            )
+        }
       }
+      .frame(
+        width: geometry.size.width,
+        height: geometry.size.height
+      )
     }
   }
   

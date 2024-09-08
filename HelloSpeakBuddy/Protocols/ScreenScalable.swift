@@ -13,10 +13,20 @@ private let referenceSize = CGSize(
   height: 844.0
 )
 
+func calculateDesignScaleReferingWidth(forSize size: CGSize) -> CGFloat {
+  return (size.width * size.height) / (referenceSize.width * referenceSize.height)
+}
+
+func calculateDesignScaleReferingHeight(forSize size: CGSize) -> CGFloat {
+  return size.height / referenceSize.height
+}
+
 func calculateDesignScale(forSize size: CGSize) -> CGFloat {
-  let dimension = max(size.width, size.height)
-  let referenceDimension = max(referenceSize.width, referenceSize.height)
-  return dimension / referenceDimension
+  if size.width > size.height {
+    return calculateDesignScaleReferingWidth(forSize: size)
+  } else {
+    return calculateDesignScaleReferingHeight(forSize: size)
+  }
 }
 
 protocol ScreenScalable {
