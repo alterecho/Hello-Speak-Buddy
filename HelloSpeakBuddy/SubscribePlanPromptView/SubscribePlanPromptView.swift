@@ -29,22 +29,20 @@ struct SubscribePlanPromptView: View {
     ZStack {
       makeGradientView().ignoresSafeArea()
       VStack {
-        makeNavBar().padding(Constant.navBarInsets.screenScaled)
+        Spacer()
+          .frame(minHeight: 7.94.screenScaled, maxHeight: 7.94.screenScaled)
+        makeNavBar()
+          .padding(Constant.navBarInsets)
         makeTitleLabel()
-        Spacer(
-          minLength: Constant.title_ProttySpacing.screenScaled
-        )
-        makeGraphWithProttyView().frame(
-          width: Constant.graphSize.screenScaled.width,
-          height: Constant.graphSize.screenScaled.height
-        )
-        Spacer(
-          minLength: Constant.graph_PromoLabelSpacing.screenScaled
-        )
+        Spacer()
+          .frame(maxHeight: Constant.title_ProttySpacing.screenScaled)
+        makeGraphWithProttyView()
+          .padding(Constant.graphPadding.screenScaled)
+        Spacer()
+          .frame(maxHeight: Constant.graph_PromoLabelSpacing.screenScaled)
         makePromoTextView()
-        Spacer(
-          minLength: Constant.promoLabel_ButtonSpacing.screenScaled
-        )
+        Spacer()
+          .frame(maxHeight: Constant.promoLabel_ButtonSpacing.screenScaled)
         
         makeSubscribeButton().padding(
           Constant.subscribeButtonPadding.screenScaled

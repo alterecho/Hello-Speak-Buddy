@@ -12,8 +12,8 @@ extension SubscribePlanPromptView {
     HStack {
       Spacer()
       CloseButton().frame(
-        width: Constant.closeButtonSize.screenScaled.width,
-        height: Constant.closeButtonSize.screenScaled.height
+        width: Constant.closeButtonSize.width,
+        height: Constant.closeButtonSize.height
       )
     }
   }

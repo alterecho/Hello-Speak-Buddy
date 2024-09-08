@@ -39,7 +39,7 @@ extension SubscribePlanPromptView {
     )
     
     static let navBarInsets = EdgeInsets(
-      top: 7.94,
+      top: 0.0,
       leading: 20.33,
       bottom: 0.0,
       trailing: 20.33
@@ -55,11 +55,13 @@ extension SubscribePlanPromptView {
       height: -52.15
     )
     
-    static let graphSize = CGSize(
-      width: 270.0,
-      height: 325.0
+    static let graphPadding = EdgeInsets(
+      top: 0.0,
+      leading: 60.0,
+      bottom: 0.0,
+      trailing: 60.0
     )
-    
+      
     static let prottyImageSize = CGSize(
       width: 187.72,
       height: 170.0
@@ -72,7 +74,7 @@ extension SubscribePlanPromptView {
       trailing: 20.0
     )
     
-    static let title_ProttySpacing = 32.86
+    static let title_ProttySpacing = 85.0
     static let graph_PromoLabelSpacing = 30.0
     static let promoLabel_ButtonSpacing = 25.0
   }
