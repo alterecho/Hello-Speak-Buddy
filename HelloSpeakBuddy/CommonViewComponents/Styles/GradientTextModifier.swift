@@ -27,6 +27,12 @@ extension SpeakBuddy {
     }
     
     func body(content: Content) -> some View {
+      let fontSize = Constant.fontSize
+      let uiFont = UIFont(
+        name: "HiraginoSans-W6",
+        size: fontSize
+      ) ?? .systemFont(ofSize: fontSize)
+
       LinearGradient(
         colors: [
           Constant.gradientColorStart,
@@ -39,7 +45,7 @@ extension SpeakBuddy {
       .mask {
         content
           .font(
-            Font(UIFont(name: "HiraginoSans-W6", size: Constant.fontSize)!)
+            Font(uiFont)
           )
           .frame(
             maxWidth: .infinity,

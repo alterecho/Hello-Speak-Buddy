@@ -56,9 +56,15 @@ extension SubscribePlanPromptView {
   }
   
   func makePromoTextView() -> some View {
+    let fontSize = Constant.levelUpTextFontSize.screenScaled
+    let uiFont = UIFont(
+      name: "HiraginoSans-W6",
+      size: fontSize
+    ) ?? .systemFont(ofSize: fontSize)
+    
     return VStack {
       Text(Constant.levelUpText)
-        .font(Font(UIFont(name: "HiraginoSans-W6", size: Constant.levelUpTextFontSize)!))
+        .font(Font(uiFont))
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity, alignment: .center)
       Text(Constant.speakBuddyText)
