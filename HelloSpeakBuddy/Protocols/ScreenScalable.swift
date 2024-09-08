@@ -17,15 +17,26 @@ protocol ScreenScalable {
   var screenScaled: Self { get }
 }
 
-extension Double {
-  var widthScaled: Self {
+private extension ScreenScalable {
+  func calculateScreenScale() -> CGFloat {
     let screenSize = UIScreen.main.bounds.size
-    return screenSize.width / referenceSize.width * self
+    let dimensionToRefer = min(screenSize.width, screenSize.height)
+    return dimensionToRefer / referenceSize.width
+  }
+}
+
+
+extension Double: ScreenScalable {
+  var screenScaled: Double {
+    calculateScreenScale() * self
+  }
+  
+  var widthScaled: Self {
+    return screenScaled
   }
   
   var heightScaled: Self {
-    let screenSize = UIScreen.main.bounds.size
-    return screenSize.height / referenceSize.height * self
+    return screenScaled
   }
 }
 
@@ -79,4 +90,10 @@ extension EdgeInsets: ScreenScalable {
       trailing: Double(trailing).widthScaled
     )
   }
+}
+
+#Preview {
+  SubscribePlanPromptView(
+    viewModel: SubscribePlanPromptViewModel()
+  )
 }
