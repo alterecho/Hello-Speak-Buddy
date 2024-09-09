@@ -32,28 +32,35 @@ extension SubscribePlanPromptView {
   
   
   func makeGraphWithProttyView() -> some View {
-    GeometryReader { geometry in
-      VStack {
-        let scale = calculateDesignScale(forSize: UIScreen.main.bounds.size)
-        let prottyImageSize = CGSize(width: Constant.prottyImageSize.width * scale, height: Constant.prottyImageSize.height * scale)
-        BarGraphView().background {
-          Image("Protty").resizable()
-            .modifier(
-              SpeakBuddy.LivelyAnimation(
-                animate: animateProtty
-              )
-            )
-            .aspectRatio(contentMode: .fit)
-            .frame(
-              width: prottyImageSize.width,
-              height: prottyImageSize.height
-            )
-            .offset(
-              CGSize(
-                width: -geometry.size.width * 0.5 - Constant.prottyOffsetFromGraph.width * scale,
-                height: -geometry.size.height * 0.5 - Constant.prottyOffsetFromGraph.height * scale
-              )
-            )
+    return VStack(alignment: .center) {
+      HStack(alignment: .bottom) {
+        Spacer()
+        BarGraphView()
+          .background {
+            Color.blue.opacity(0.5)
+          }
+          .background {
+            GeometryReader { geometry in
+              let prottyImageSize = Constant.prottyImageSize.screenScaled
+              Image("Protty")
+                  .resizable()
+//                  .modifier(
+//                    SpeakBuddy.LivelyAnimation(
+//                      animate: animateProtty
+//                    )
+//                  )
+                  .aspectRatio(contentMode: .fit)
+                  .frame(
+                    width: prottyImageSize.width,
+                    height: prottyImageSize.height
+                  )
+                  .offset(
+                    CGSize(
+                      width: -prottyImageSize.width * 0.5,
+                      height: -prottyImageSize.height * 0.5
+                    )
+                  )
+            }
         }
       }
       .frame(
