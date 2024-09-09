@@ -30,43 +30,50 @@ extension SubscribePlanPromptView {
       .multilineTextAlignment(.center)
   }
   
-  
   func makeGraphWithProttyView() -> some View {
     return VStack(alignment: .center) {
       HStack(alignment: .bottom) {
         Spacer()
         BarGraphView()
           .background {
-            Color.blue.opacity(0.5)
-          }
-          .background {
             GeometryReader { geometry in
-              let prottyImageSize = Constant.prottyImageSize.screenScaled
+              let referenceSize = CGSize(width: 270.0, height: 325.0)
+              let widthScale = calculateDesignScaleReferingWidth(forSize: geometry.size, referenceSize: referenceSize)
+
+              let heightScale = calculateDesignScaleReferingHeight(forSize: geometry.size, referenceSize: referenceSize)
+
+              let prottyImageSizeScaled = CGSize(
+                width: Constant.prottyImageSize.width.screenScaled,
+                height: Constant.prottyImageSize.height.screenScaled
+              )
+
+              let prottyOffsetScaled = CGSize(
+                width: Constant.prottyOffsetFromGraph.width * widthScale,
+                height: Constant.prottyOffsetFromGraph.height * heightScale
+              )
+              
               Image("Protty")
                   .resizable()
-//                  .modifier(
-//                    SpeakBuddy.LivelyAnimation(
-//                      animate: animateProtty
-//                    )
-//                  )
+                  .modifier(
+                    SpeakBuddy.LivelyAnimation(
+                      animate: animateProtty
+                    )
+                  )
                   .aspectRatio(contentMode: .fit)
                   .frame(
-                    width: prottyImageSize.width,
-                    height: prottyImageSize.height
+                    width: prottyImageSizeScaled.width,
+                    height: prottyImageSizeScaled.width
                   )
                   .offset(
                     CGSize(
-                      width: -prottyImageSize.width * 0.5,
-                      height: -prottyImageSize.height * 0.5
+                      width: prottyOffsetScaled.width,
+                      height: prottyOffsetScaled.height
                     )
                   )
             }
         }
+        Spacer()
       }
-      .frame(
-        width: geometry.size.width,
-        height: geometry.size.height
-      )
     }
   }
   

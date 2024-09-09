@@ -33,27 +33,20 @@ struct BarGraphView: View {
   }
   
   var body: some View {
-    GeometryReader { geometry in
-      let scale = calculateDesignScale(forSize: UIScreen.main.bounds.size)
-      let scaleWidth = calculateDesignScaleReferingWidth(forSize: UIScreen.main.bounds.size)
-      let scaleHeight = calculateDesignScaleReferingHeight(forSize: UIScreen.main.bounds.size)
-      let barWidth = Constant.barWidth * scaleWidth
-      print(barWidth)
-      return VStack {
-        HStack(
-          alignment: .bottom,
-          spacing: Constant.barSpacing * scale
-        ) {
-          ForEach(Array(Constant.itemModels.enumerated()), id: \.element.label) { enumeration in
-            Self.ItemView(
-              model: enumeration.element,
-              delay: TimeInterval(Double(enumeration.offset) * 0.125)
-            ).frame(width: barWidth)
-          }
+      return HStack(
+        alignment: .bottom,
+        spacing: Constant.barSpacing.screenScaled
+      ) {
+        ForEach(Array(Constant.itemModels.enumerated()), id: \.element.label) { enumeration in
+          Self.ItemView(
+            model: enumeration.element,
+            delay: TimeInterval(
+              Double(enumeration.offset) * 0.125
+            )
+          )
+          .frame(width: Constant.barWidth.screenScaled)
         }
-      }.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-    }
-    
+      }
   }
 }
 

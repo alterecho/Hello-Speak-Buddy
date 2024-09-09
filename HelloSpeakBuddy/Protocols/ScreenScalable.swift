@@ -13,15 +13,24 @@ private let referenceSize = CGSize(
   height: 844.0
 )
 
-func calculateDesignScaleReferingWidth(forSize size: CGSize) -> CGFloat {
-  return (size.width * size.height) / (referenceSize.width * referenceSize.height)
+func calculateDesignScaleReferingWidth(
+  forSize size: CGSize,
+  referenceSize: CGSize = referenceSize
+) -> CGFloat {
+  return size.width / referenceSize.height
 }
 
-func calculateDesignScaleReferingHeight(forSize size: CGSize) -> CGFloat {
+func calculateDesignScaleReferingHeight(
+  forSize size: CGSize,
+  referenceSize: CGSize = referenceSize
+) -> CGFloat {
   return size.height / referenceSize.height
 }
 
-func calculateDesignScale(forSize size: CGSize) -> CGFloat {
+func calculateDesignScale(
+  forSize size: CGSize,
+  referenceSize: CGSize = referenceSize
+) -> CGFloat {
   if size.width > size.height {
     return calculateDesignScaleReferingWidth(forSize: size)
   } else {
