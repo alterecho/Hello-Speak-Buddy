@@ -21,6 +21,7 @@ extension Color {
       red: normalizedRGBAColor[0],
       green: normalizedRGBAColor[1],
       blue: normalizedRGBAColor[2]
-    ).opacity(alpha)
+    )
+    .opacity(alpha)
   }
 }

@@ -14,7 +14,7 @@ struct SubscribePlanPromptView: View {
   private var viewDidAppearSubject = PassthroughSubject<Void, Never>()
   private var signupButtonTapSubject = PassthroughSubject<Void, Never>()
   @State var animateProtty = false
-
+  
   init(viewModel: SubscribePlanPromptViewModel) {
     self.viewModel = viewModel
     viewModel.transform(
@@ -24,7 +24,7 @@ struct SubscribePlanPromptView: View {
       )
     )
   }
-
+  
   var body: some View {
     ZStack {
       makeGradientView().ignoresSafeArea()
@@ -35,7 +35,7 @@ struct SubscribePlanPromptView: View {
           .padding(Constant.navBarInsets.screenScaled)
         Spacer()
           .frame(height: 10.0.screenScaled).background(Color.orange)
-
+        
         makeTitleLabel()
         Spacer()
           .frame(height: 85.0.screenScaled)
@@ -73,7 +73,7 @@ extension SubscribePlanPromptView {
       animateProtty = false
     }
   }
-      
+  
   func vibrateForSubscribeButtonTap() {
     let feedbackGenerator = UIImpactFeedbackGenerator(style: .soft)
     feedbackGenerator.impactOccurred()

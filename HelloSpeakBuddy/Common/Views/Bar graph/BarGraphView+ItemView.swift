@@ -80,7 +80,8 @@ extension BarGraphView {
                 startPoint: .top,
                 endPoint: .bottom
               )
-            ).frame(
+            )
+            .frame(
               height: geometry.size.height * Double(model.value) / 100.0 * heightFactor
             )
             .clipShape(RoundedCornerRectangle(cornersToRound: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 2.73, height: 2.73)))
@@ -98,13 +99,18 @@ extension BarGraphView {
                 name: "HiraginoSans-W6",
                 size: Constant.labelFontSize.screenScaled)!
             )
-          ).frame(
+          )
+          .frame(
             width: Constant.labelSize.width.screenScaled,
             height: Constant.labelSize.width.screenScaled,
             alignment: .center
-          ).clipped()
+          )
+          .clipped()
       }.onAppear {
-        withAnimation(.easeOut(duration: 0.625).delay(delay)) {
+        withAnimation(
+          .easeOut(duration: 0.625)
+          .delay(delay)
+        ) {
           heightFactor = 1.0
         }
       }

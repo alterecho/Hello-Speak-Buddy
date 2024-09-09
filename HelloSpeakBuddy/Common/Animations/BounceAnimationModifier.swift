@@ -18,7 +18,6 @@ extension SpeakBuddy {
           .repeatCount(1, autoreverses: true),
           value: animate
         )
-
     }
   }
 }
