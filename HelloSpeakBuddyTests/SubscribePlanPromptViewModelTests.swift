@@ -11,7 +11,7 @@ import Combine
 
 final class SubscribePlanPromptViewModelTests: XCTestCase {
   private var sut: SubscribePlanPromptViewModel!
-  private var output: SubscribePlanPromptViewModel.Output!
+  
   private var cancellables: Set<AnyCancellable>!
   private var viewDidAppear: PassthroughSubject<Void, Never>!
   private var subscribeButtonTapPublisher: PassthroughSubject<Void, Never>!
@@ -31,11 +31,7 @@ final class SubscribePlanPromptViewModelTests: XCTestCase {
       subscribeButtonTapPublisher: subscribeButtonTapPublisher.eraseToAnyPublisher(),
       closeButtonTapPublisher: closeButtonTapPublisher.eraseToAnyPublisher()
     )
-    
-    output = sut.transform(input: input)
-    output.combinedPublishers.sink { _ in
-      
-    }.store(in: &cancellables)
+    sut.transform(input: input)
   }
   
   override func tearDown() {
@@ -46,8 +42,9 @@ final class SubscribePlanPromptViewModelTests: XCTestCase {
   func testOnAppear_graphIsShown() {
     // given
     let expectation = expectation(description: "graph is shown expectation")
-    output.showGraphPublisher.sink { _ in
+    sut.$output.dropFirst().sink { output in
       // then
+      XCTAssertTrue(output.showGraph)
       expectation.fulfill()
     }.store(in: &cancellables)
     // when
@@ -58,9 +55,9 @@ final class SubscribePlanPromptViewModelTests: XCTestCase {
   func testSubscribeButtonTap_pageLoadingIndicatorIsShown() {
     // given
     let expectation = expectation(description: "page loading indicator is shown expectation")
-    output.loadingPublisher.sink { isLoading in
+    sut.$output.dropFirst().sink { output in
       // then
-      XCTAssertTrue(isLoading)
+      XCTAssertTrue(output.loading)
       expectation.fulfill()
     }.store(in: &cancellables)
     // when
@@ -71,12 +68,14 @@ final class SubscribePlanPromptViewModelTests: XCTestCase {
   func testCloseButtonTap_pageIsDismissed() {
     // given
     let expectation = expectation(description: "page loading indicator is shown expectation")
-    output.dismissPublisher.sink { output in
+    sut.$output.dropFirst().sink { output in
       // then
+      XCTAssertTrue(output.dismiss)
       expectation.fulfill()
     }.store(in: &cancellables)
     // when
     closeButtonTapPublisher.send()
     wait(for: [expectation], timeout: 2.0)
   }
+
 }
