@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 struct SubscribePlanPromptView: View {
+  @Environment(\.dismiss) private var dismiss
   @State var viewModel: SubscribePlanPromptViewModel
   
   private var viewDidAppearSubject = PassthroughSubject<Void, Never>()
@@ -59,14 +60,12 @@ struct SubscribePlanPromptView: View {
         makeSubscribeButton().padding(
           Constant.subscribeButtonPadding.screenScaled
         )
-        Spacer().frame(height: 54.0.screenScaled).background {
-          Color.red
-        }
+        Spacer().frame(height: 54.0.screenScaled)
       }
       .ignoresSafeArea(edges: [.bottom])
     }.onAppear {
       viewDidAppearSubject.send()
-    }
+    }.navigationBarBackButtonHidden(true)
   }
   
   var activityIndicator: some View {

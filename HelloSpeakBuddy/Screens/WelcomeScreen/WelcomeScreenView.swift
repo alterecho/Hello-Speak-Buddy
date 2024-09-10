@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct WelcomeScreenView: View {
+  @State private var showSubscribeViewWithNavigationStack: Bool = false
   @State private var showSubscribeViewModally: Bool = false
   @State private var showSubscribeViewAsFullScreenCover: Bool = false
   
   var body: some View {
     makeViewByAddingNavigation(
-      view: NavigationStack {
-        makeContentView()
-      }
+      view: makeContentView()
     )
   }
 }
@@ -26,44 +25,56 @@ extension WelcomeScreenView {
       GradientBackground()
       VStack(spacing: 10.0) {
         Text("chooseSubscribeNavigationStyle")
-            .font(.title2)
-          
-          NavigationLink {
-            makeSubscribePlanPromptView()
-          } label: {
-            Text("navigationToSubscribeScreen")
-              .font(.title)
-          }
-          Button {
-            showSubscribeViewModally = true
-          } label: {
-            Text("showSubscribePopup")
-              .font(.title)
-          }
-          Button {
-            showSubscribeViewAsFullScreenCover = true
-          } label: {
-            Text("showSubscribeFullscreen")
-              .font(.title)
-          }
-        }.padding()
-      }
-      .ignoresSafeArea()
+          .font(.title2)
+        
+        Button {
+          showSubscribeViewWithNavigationStack = true
+        } label: {
+          Text("navigationToSubscribeScreen")
+            .font(.title)
+        }
+        
+        Button {
+          showSubscribeViewModally = true
+        } label: {
+          Text("showSubscribePopup")
+            .font(.title)
+        }
+        Button {
+          showSubscribeViewAsFullScreenCover = true
+        } label: {
+          Text("showSubscribeFullscreen")
+            .font(.title)
+        }
+      }.padding()
+    }
+    .ignoresSafeArea()
   }
   
   private func makeViewByAddingNavigation(view: some View) -> some View {
-    view.sheet(
-      isPresented: $showSubscribeViewModally
-    ) {
-      makeSubscribePlanPromptView(
-        presentationBinding: $showSubscribeViewModally
-      )
-    }.fullScreenCover(
-      isPresented: $showSubscribeViewAsFullScreenCover
-    ) {
-      makeSubscribePlanPromptView(
-        presentationBinding: $showSubscribeViewAsFullScreenCover
-      )
+    NavigationStack {
+      view
+        .navigationDestination(
+          isPresented: $showSubscribeViewWithNavigationStack,
+          destination: {
+            makeSubscribePlanPromptView(
+              presentationBinding: $showSubscribeViewWithNavigationStack
+            )
+          }
+        )
+        .sheet(
+          isPresented: $showSubscribeViewModally
+        ) {
+          makeSubscribePlanPromptView(
+            presentationBinding: $showSubscribeViewModally
+          )
+        }.fullScreenCover(
+          isPresented: $showSubscribeViewAsFullScreenCover
+        ) {
+          makeSubscribePlanPromptView(
+            presentationBinding: $showSubscribeViewAsFullScreenCover
+          )
+        }
     }
   }
   
