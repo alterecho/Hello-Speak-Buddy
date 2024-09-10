@@ -86,6 +86,9 @@
         }
       }
     },
+    "launch" : {
+
+    },
     "levelUpText" : {
       "localizations" : {
         "en" : {

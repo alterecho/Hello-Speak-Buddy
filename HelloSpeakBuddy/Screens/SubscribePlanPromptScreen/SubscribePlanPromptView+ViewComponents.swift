@@ -11,10 +11,14 @@ extension SubscribePlanPromptView {
   func makeNavBar() -> some View {
     HStack {
       Spacer()
-      CloseButton().frame(
-        width: Constant.closeButtonSize.width,
-        height: Constant.closeButtonSize.height
-      )
+      Button {
+        closeButtonTapSubject.send()
+      } label: {
+        CloseButton().frame(
+          width: Constant.closeButtonSize.width,
+          height: Constant.closeButtonSize.height
+        )
+      }
     }
   }
   

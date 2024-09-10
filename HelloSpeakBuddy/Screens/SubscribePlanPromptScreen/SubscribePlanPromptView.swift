@@ -13,6 +13,7 @@ struct SubscribePlanPromptView: View {
   
   private var viewDidAppearSubject = PassthroughSubject<Void, Never>()
   private var signupButtonTapSubject = PassthroughSubject<Void, Never>()
+  var closeButtonTapSubject = PassthroughSubject<Void, Never>()
   @State var animateProtty = false
   
   init(viewModel: SubscribePlanPromptViewModel) {
@@ -20,7 +21,8 @@ struct SubscribePlanPromptView: View {
     viewModel.transform(
       input: SubscribePlanPromptViewModel.Input(
         viewDidAppear: viewDidAppearSubject.eraseToAnyPublisher(),
-        subscribeButtonTapPublisher: signupButtonTapSubject.eraseToAnyPublisher()
+        subscribeButtonTapPublisher: signupButtonTapSubject.eraseToAnyPublisher(),
+        closeButtonTapPublisher: closeButtonTapSubject.eraseToAnyPublisher()
       )
     )
   }

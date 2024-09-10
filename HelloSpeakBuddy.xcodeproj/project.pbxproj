@@ -25,6 +25,7 @@
 		57714E342C8316410015F98E /* SubscribePlanPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E332C8316410015F98E /* SubscribePlanPromptView.swift */; };
 		57714E382C83165A0015F98E /* SubscribePlanPromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */; };
 		57714E402C8413CA0015F98E /* SubscribePlanPromptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E3F2C8413CA0015F98E /* SubscribePlanPromptViewModelTests.swift */; };
+		577D04C32C900EC4000EF3EC /* WelcomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D04C22C900EC4000EF3EC /* WelcomeScreenView.swift */; };
 		579C44042C8849380091CEB4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C44032C8849380091CEB4 /* Color+Extensions.swift */; };
 		579C44062C894F260091CEB4 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C44052C894F260091CEB4 /* CloseButton.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		57714E332C8316410015F98E /* SubscribePlanPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePlanPromptView.swift; sourceTree = "<group>"; };
 		57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePlanPromptViewModel.swift; sourceTree = "<group>"; };
 		57714E3F2C8413CA0015F98E /* SubscribePlanPromptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePlanPromptViewModelTests.swift; sourceTree = "<group>"; };
+		577D04C22C900EC4000EF3EC /* WelcomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenView.swift; sourceTree = "<group>"; };
 		579C44032C8849380091CEB4 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		579C44052C894F260091CEB4 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,7 +188,7 @@
 				576D01082C8B0AC00087C0EA /* Protocols */,
 				576D00FA2C89B5490087C0EA /* Extensions */,
 				576D00FF2C89B9690087C0EA /* Common */,
-				57714E3C2C84131E0015F98E /* SubscribePlanPromptScreen */,
+				577D04BF2C900E70000EF3EC /* Screens */,
 				57714E0D2C830B5B0015F98E /* Assets.xcassets */,
 				57056DDF2C8E0092000FE3EF /* Localizable.xcstrings */,
 				57714E0F2C830B5B0015F98E /* Preview Content */,
@@ -228,6 +230,15 @@
 				57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */,
 			);
 			path = SubscribePlanPromptScreen;
+			sourceTree = "<group>";
+		};
+		577D04BF2C900E70000EF3EC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				57714E3C2C84131E0015F98E /* SubscribePlanPromptScreen */,
+				577D04C22C900EC4000EF3EC /* WelcomeScreenView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +380,7 @@
 				576D01062C8AEE880087C0EA /* BounceAnimationModifier.swift in Sources */,
 				579C44062C894F260091CEB4 /* CloseButton.swift in Sources */,
 				57714E0A2C830B580015F98E /* HelloSpeakBuddyApp.swift in Sources */,
+				577D04C32C900EC4000EF3EC /* WelcomeScreenView.swift in Sources */,
 				576D00FC2C89B5860087C0EA /* SpeakBuddy+Namespace.swift in Sources */,
 				57714E382C83165A0015F98E /* SubscribePlanPromptViewModel.swift in Sources */,
 				57714E342C8316410015F98E /* SubscribePlanPromptView.swift in Sources */,
