@@ -16,33 +16,45 @@ class SubscribePlanPromptViewModel: ObservableObject {
   }
   
   struct Output {
-    var showGraph: Bool
-    var loading: Bool
-    var dismiss: Bool
+    var showGraphPublisher: AnyPublisher<Void, Never>
+    var loadingPublisher: AnyPublisher<Bool, Never>
+    var dismissPublisher: AnyPublisher<Void, Never>
+    var combinedPublishers: AnyPublisher<Void, Never>
   }
   
-  private var cancellables = Set<AnyCancellable>()
+  private let showGraphSubject = PassthroughSubject<Void, Never>()
+  private let loadingSubject = PassthroughSubject<Bool, Never>()
+  private let dismissSubject = PassthroughSubject<Void, Never>()
+          
+  func transform(input: Input) -> Output {
+    let viewDidAppearPublisher = input.viewDidAppear.handleEvents(
+      receiveOutput: { [weak self] _ in
+        self?.showGraphSubject.send()
+      })
     
-  @Published var output: Output = {
+    let subscribeButtonTapPublisher = input.subscribeButtonTapPublisher.handleEvents(
+      receiveOutput: { [weak self] _ in
+        self?.loadingSubject.send(true)
+      })
+    
+    let closeButtonTapPublisher =  input.closeButtonTapPublisher.handleEvents(
+      receiveOutput: { [weak self] _ in
+        self?.dismissSubject.send()
+      })
+    
+    let combinedPublishers = Publishers.CombineLatest3(
+      viewDidAppearPublisher,
+      subscribeButtonTapPublisher,
+      closeButtonTapPublisher
+    ).flatMap { _ in
+      Just(())
+    }
+    
     return Output(
-      showGraph: false,
-      loading: false,
-      dismiss: false
+      showGraphPublisher: showGraphSubject.eraseToAnyPublisher(),
+      loadingPublisher: loadingSubject.eraseToAnyPublisher(),
+      dismissPublisher: dismissSubject.eraseToAnyPublisher(),
+      combinedPublishers: combinedPublishers.eraseToAnyPublisher()
     )
-  }()
-    
-  func transform(input: Input) {
-    input.viewDidAppear.sink { [weak self] _ in
-      self?.output.showGraph = true
-    }.store(in: &cancellables)
-
-    input.subscribeButtonTapPublisher.sink { [weak self] _ in
-      self?.output.loading = true
-    }.store(in: &cancellables)
-    
-    input.closeButtonTapPublisher.sink { [weak self] _ in
-      self?.output.dismiss = true
-    }.store(in: &cancellables)
-
   }
 }
