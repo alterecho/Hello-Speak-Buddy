@@ -19,7 +19,8 @@ struct WelcomeScreenView: View {
       }
     }.sheet(isPresented: $showSubscribeViewModally) {
       SubscribePlanPromptView(
-        viewModel: SubscribePlanPromptViewModel()
+        viewModel: SubscribePlanPromptViewModel(),
+        isModalPresentationBinding: $showSubscribeViewModally
       )
     }
   }

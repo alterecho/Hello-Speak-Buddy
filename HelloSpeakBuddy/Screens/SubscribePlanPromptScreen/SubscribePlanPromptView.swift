@@ -16,13 +16,20 @@ struct SubscribePlanPromptView: View {
   var closeButtonTapSubject = PassthroughSubject<Void, Never>()
   @State var animateProtty = false
   
-  init(viewModel: SubscribePlanPromptViewModel) {
+  @Binding var isModalPresentationBinding: Bool
+  
+  init(
+    viewModel: SubscribePlanPromptViewModel,
+    isModalPresentationBinding: Binding<Bool> = .constant(false)
+  ) {
     self.viewModel = viewModel
+    _isModalPresentationBinding = isModalPresentationBinding
     viewModel.transform(
       input: SubscribePlanPromptViewModel.Input(
         viewDidAppear: viewDidAppearSubject.eraseToAnyPublisher(),
         subscribeButtonTapPublisher: signupButtonTapSubject.eraseToAnyPublisher(),
-        closeButtonTapPublisher: closeButtonTapSubject.eraseToAnyPublisher()
+        closeButtonTapPublisher: closeButtonTapSubject.eraseToAnyPublisher(),
+        isModalPresentationBinding: isModalPresentationBinding
       )
     )
   }
