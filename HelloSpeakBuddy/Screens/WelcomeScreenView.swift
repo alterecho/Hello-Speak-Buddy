@@ -9,20 +9,44 @@ import SwiftUI
 
 struct WelcomeScreenView: View {
   @State private var showSubscribeViewModally: Bool = false
+  @State private var showSubscribeViewAsFullScreenCover: Bool = false
   
   var body: some View {
-    VStack {
+    VStack(spacing: 10.0) {
       Button {
         showSubscribeViewModally = true
       } label: {
-        Text("launch")
+        Text("showSubscribePopup")
       }
-    }.sheet(isPresented: $showSubscribeViewModally) {
-      SubscribePlanPromptView(
-        viewModel: SubscribePlanPromptViewModel(),
-        isModalPresentationBinding: $showSubscribeViewModally
+      
+      Button {
+        showSubscribeViewAsFullScreenCover = true
+      } label: {
+        Text("showSubscribeFullscreen")
+      }
+    }.sheet(
+      isPresented: $showSubscribeViewModally
+    ) {
+      makeSubscribePlanPromptView(
+        presentationBinding: $showSubscribeViewModally
+      )
+    }.fullScreenCover(
+      isPresented: $showSubscribeViewAsFullScreenCover
+    ) {
+      makeSubscribePlanPromptView(
+        presentationBinding: $showSubscribeViewAsFullScreenCover
       )
     }
+  }
+  
+  private func makeSubscribePlanPromptView(
+    presentationBinding: Binding<Bool>
+  ) -> SubscribePlanPromptView{
+    return SubscribePlanPromptView(
+      viewModel: SubscribePlanPromptViewModel(),
+      isModalPresentationBinding: presentationBinding
+    )
+
   }
 }
 

@@ -86,9 +86,6 @@
         }
       }
     },
-    "launch" : {
-
-    },
     "levelUpText" : {
       "localizations" : {
         "en" : {
@@ -120,6 +117,12 @@
           }
         }
       }
+    },
+    "showSubscribeFullscreen" : {
+
+    },
+    "showSubscribePopup" : {
+
     },
     "speakBuddyText" : {
       "extractionState" : "manual",
