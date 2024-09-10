@@ -69,6 +69,17 @@
         }
       }
     },
+    "chooseSubscribeNavigationStyle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How shall I prompt the users to subscribe?"
+          }
+        }
+      }
+    },
     "closeButtonText" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -123,7 +134,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Show as Fullscreen"
+            "value" : "As Fullscreen"
           }
         }
       }
@@ -133,7 +144,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Show as Sheet"
+            "value" : "As modal Sheet"
           }
         }
       }
