@@ -36,7 +36,7 @@ struct SubscribePlanPromptView: View {
   
   var body: some View {
     ZStack {
-      makeGradientView().ignoresSafeArea()
+      GradientBackground().ignoresSafeArea()
       VStack {
         Spacer()
           .frame(height: 7.94.screenScaled)

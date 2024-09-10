@@ -18,21 +18,7 @@ extension SubscribePlanPromptView {
       blue: 0,
       alpha: 0.2
     )
-    
-    static let backgroundGradientStartColor = Color.fromRGBA256Color(
-      red: 213,
-      green: 210,
-      blue: 255,
-      alpha: 1.0
-    )
-    
-    static let backgroundGradientEndColor = Color.fromRGBA256Color(
-      red: 255,
-      green: 255,
-      blue: 255,
-      alpha: 1.0
-    )
-    
+        
     static let navBarInsets = EdgeInsets(
       top: 0.0,
       leading: 20.33,

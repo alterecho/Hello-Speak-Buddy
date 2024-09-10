@@ -12,19 +12,34 @@ struct WelcomeScreenView: View {
   @State private var showSubscribeViewAsFullScreenCover: Bool = false
   
   var body: some View {
-    VStack(spacing: 10.0) {
-      Button {
-        showSubscribeViewModally = true
-      } label: {
-        Text("showSubscribePopup")
+    makeViewByAddingNavigation(
+      view: makeContentView()
+    )
+  }
+}
+
+extension WelcomeScreenView {
+  private func makeContentView() -> some View {
+    ZStack {
+      GradientBackground()
+      VStack(spacing: 10.0) {
+        Button {
+          showSubscribeViewModally = true
+        } label: {
+          Text("showSubscribePopup")
+        }
+        
+        Button {
+          showSubscribeViewAsFullScreenCover = true
+        } label: {
+          Text("showSubscribeFullscreen")
+        }
       }
-      
-      Button {
-        showSubscribeViewAsFullScreenCover = true
-      } label: {
-        Text("showSubscribeFullscreen")
-      }
-    }.sheet(
+    }.ignoresSafeArea()
+  }
+  
+  private func makeViewByAddingNavigation(view: some View) -> some View {
+    view.sheet(
       isPresented: $showSubscribeViewModally
     ) {
       makeSubscribePlanPromptView(
@@ -46,7 +61,6 @@ struct WelcomeScreenView: View {
       viewModel: SubscribePlanPromptViewModel(),
       isModalPresentationBinding: presentationBinding
     )
-
   }
 }
 

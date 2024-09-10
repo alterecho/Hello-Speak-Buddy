@@ -117,17 +117,6 @@ extension SubscribePlanPromptView {
     )
     .padding(.horizontal)
   }
-  
-  func makeGradientView() -> some View {
-    return LinearGradient(
-      colors: [
-        Constant.backgroundGradientStartColor,
-        Constant.backgroundGradientEndColor
-      ],
-      startPoint: .top,
-      endPoint: .bottom
-    )
-  }
 }
 
 #Preview {

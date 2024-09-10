@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57056DE02C8E0092000FE3EF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 57056DDF2C8E0092000FE3EF /* Localizable.xcstrings */; };
 		57207C3A2C8986FE00F7D0F8 /* BarGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57207C392C8986FE00F7D0F8 /* BarGraphView.swift */; };
+		574A8E312C907F7700860C5E /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574A8E302C907F7700860C5E /* GradientBackground.swift */; };
 		576D00F92C89A6290087C0EA /* GradientTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D00F82C89A6290087C0EA /* GradientTextModifier.swift */; };
 		576D00FC2C89B5860087C0EA /* SpeakBuddy+Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D00FB2C89B5860087C0EA /* SpeakBuddy+Namespace.swift */; };
 		576D01012C89B9D40087C0EA /* ThemeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D01002C89B9D40087C0EA /* ThemeButtonStyle.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		57056DDF2C8E0092000FE3EF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = HelloSpeakBuddy/Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
 		57207C392C8986FE00F7D0F8 /* BarGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphView.swift; sourceTree = "<group>"; };
+		574A8E302C907F7700860C5E /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
 		576D00F82C89A6290087C0EA /* GradientTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTextModifier.swift; sourceTree = "<group>"; };
 		576D00FB2C89B5860087C0EA /* SpeakBuddy+Namespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeakBuddy+Namespace.swift"; sourceTree = "<group>"; };
 		576D01002C89B9D40087C0EA /* ThemeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonStyle.swift; sourceTree = "<group>"; };
@@ -103,9 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				579C44052C894F260091CEB4 /* CloseButton.swift */,
+				574A8E302C907F7700860C5E /* GradientBackground.swift */,
 				576D010F2C8B47340087C0EA /* Bar graph */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		574A8E322C907FCC00860C5E /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				577D04C22C900EC4000EF3EC /* WelcomeScreenView.swift */,
+			);
+			path = WelcomeScreen;
 			sourceTree = "<group>";
 		};
 		576D00FA2C89B5490087C0EA /* Extensions */ = {
@@ -235,8 +246,8 @@
 		577D04BF2C900E70000EF3EC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				574A8E322C907FCC00860C5E /* WelcomeScreen */,
 				57714E3C2C84131E0015F98E /* SubscribePlanPromptScreen */,
-				577D04C22C900EC4000EF3EC /* WelcomeScreenView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -375,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57207C3A2C8986FE00F7D0F8 /* BarGraphView.swift in Sources */,
+				574A8E312C907F7700860C5E /* GradientBackground.swift in Sources */,
 				576D010C2C8B1B4F0087C0EA /* SubscribePlanPromptView+ViewComponents.swift in Sources */,
 				576D010A2C8B0AFD0087C0EA /* ScreenScalable.swift in Sources */,
 				576D01062C8AEE880087C0EA /* BounceAnimationModifier.swift in Sources */,

@@ -119,10 +119,24 @@
       }
     },
     "showSubscribeFullscreen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show as Fullscreen"
+          }
+        }
+      }
     },
     "showSubscribePopup" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show as Sheet"
+          }
+        }
+      }
     },
     "speakBuddyText" : {
       "extractionState" : "manual",
