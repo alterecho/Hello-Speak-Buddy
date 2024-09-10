@@ -113,6 +113,17 @@
         }
       }
     },
+    "navigationToSubscribeScreen" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Using navigation stack"
+          }
+        }
+      }
+    },
     "pageTitle" : {
       "localizations" : {
         "en" : {

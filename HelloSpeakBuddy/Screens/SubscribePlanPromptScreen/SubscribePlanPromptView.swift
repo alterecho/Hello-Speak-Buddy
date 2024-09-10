@@ -20,16 +20,16 @@ struct SubscribePlanPromptView: View {
   
   init(
     viewModel: SubscribePlanPromptViewModel,
-    isModalPresentationBinding: Binding<Bool> = .constant(false)
+    isModalPresentationBinding: Binding<Bool>? = nil
   ) {
     self.viewModel = viewModel
-    _isModalPresentationBinding = isModalPresentationBinding
+    _isModalPresentationBinding = isModalPresentationBinding ?? .constant(false)
     viewModel.transform(
       input: SubscribePlanPromptViewModel.Input(
         viewDidAppear: viewDidAppearSubject.eraseToAnyPublisher(),
         subscribeButtonTapPublisher: signupButtonTapSubject.eraseToAnyPublisher(),
         closeButtonTapPublisher: closeButtonTapSubject.eraseToAnyPublisher(),
-        isModalPresentationBinding: isModalPresentationBinding
+        isModalPresentationBinding: $isModalPresentationBinding
       )
     )
   }

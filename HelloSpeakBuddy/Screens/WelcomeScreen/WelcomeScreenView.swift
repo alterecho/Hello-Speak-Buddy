@@ -13,7 +13,9 @@ struct WelcomeScreenView: View {
   
   var body: some View {
     makeViewByAddingNavigation(
-      view: makeContentView()
+      view: NavigationStack {
+        makeContentView()
+      }
     )
   }
 }
@@ -22,27 +24,31 @@ extension WelcomeScreenView {
   private func makeContentView() -> some View {
     ZStack {
       GradientBackground()
-      
       VStack(spacing: 10.0) {
         Text("chooseSubscribeNavigationStyle")
-          .font(.title2)
-        VStack(spacing: 10.0) {
-        }
-        Button {
-          showSubscribeViewModally = true
-        } label: {
-          Text("showSubscribePopup")
-            .font(.title)
-        }
-        Button {
-          showSubscribeViewAsFullScreenCover = true
-        } label: {
-          Text("showSubscribeFullscreen")
-            .font(.title)
-        }
-      }.padding()
-    }
-    .ignoresSafeArea()
+            .font(.title2)
+          
+          NavigationLink {
+            makeSubscribePlanPromptView()
+          } label: {
+            Text("navigationToSubscribeScreen")
+              .font(.title)
+          }
+          Button {
+            showSubscribeViewModally = true
+          } label: {
+            Text("showSubscribePopup")
+              .font(.title)
+          }
+          Button {
+            showSubscribeViewAsFullScreenCover = true
+          } label: {
+            Text("showSubscribeFullscreen")
+              .font(.title)
+          }
+        }.padding()
+      }
+      .ignoresSafeArea()
   }
   
   private func makeViewByAddingNavigation(view: some View) -> some View {
@@ -62,7 +68,7 @@ extension WelcomeScreenView {
   }
   
   private func makeSubscribePlanPromptView(
-    presentationBinding: Binding<Bool>
+    presentationBinding: Binding<Bool>? = nil
   ) -> SubscribePlanPromptView{
     return SubscribePlanPromptView(
       viewModel: SubscribePlanPromptViewModel(),
