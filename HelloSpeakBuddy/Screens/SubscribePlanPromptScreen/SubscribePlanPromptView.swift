@@ -10,7 +10,7 @@ import Combine
 
 struct SubscribePlanPromptView: View {
   @Environment(\.dismiss) private var dismiss
-  @State var viewModel: SubscribePlanPromptViewModel
+  @ObservedObject var viewModel: SubscribePlanPromptViewModel
   
   private var viewDidAppearSubject = PassthroughSubject<Void, Never>()
   private var signupButtonTapSubject = PassthroughSubject<Void, Never>()
@@ -44,13 +44,17 @@ struct SubscribePlanPromptView: View {
         makeNavBar()
           .padding(Constant.navBarInsets.screenScaled)
         Spacer()
-          .frame(height: 10.0.screenScaled).background(Color.orange)
+          .frame(height: 10.0.screenScaled)
         
         makeTitleLabel()
         Spacer()
           .frame(height: 85.0.screenScaled)
-        makeGraphWithProttyView()
-          .padding(Constant.graphPadding.screenScaled)
+        if viewModel.output.showGraph {
+          makeGraphWithProttyView().padding(Constant.graphPadding.screenScaled)
+        } else {
+          Spacer().padding(Constant.graphPadding.screenScaled)
+        }
+          
         Spacer()
           .frame(height: 30.0.screenScaled)
         makePromoTextView()
@@ -64,7 +68,10 @@ struct SubscribePlanPromptView: View {
       }
       .ignoresSafeArea(edges: [.bottom])
     }.onAppear {
-      viewDidAppearSubject.send()
+      // adding a delay so as to show animation after modal sheet is shown
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+        viewDidAppearSubject.send()
+      }
     }.navigationBarBackButtonHidden(true)
   }
   

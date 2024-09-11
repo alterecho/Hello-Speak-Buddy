@@ -48,10 +48,7 @@ class SubscribePlanPromptViewModel: ObservableObject {
       guard let self else {
         return
       }
-      output.isModalPresentationBinding.wrappedValue = false
-      
-      // set the property again so that the `output` listeners are notified (like in tests)
-      output.isModalPresentationBinding = output.isModalPresentationBinding
+      output.isModalPresentationBinding.wrappedValue = false      
     }.store(in: &cancellables)
   }
 }

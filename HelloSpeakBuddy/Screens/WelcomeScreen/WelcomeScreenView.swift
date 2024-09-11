@@ -26,6 +26,7 @@ extension WelcomeScreenView {
       VStack(spacing: 10.0) {
         Text("chooseSubscribeNavigationStyle")
           .font(.title2)
+          .multilineTextAlignment(.center)
         
         Button {
           showSubscribeViewWithNavigationStack = true
