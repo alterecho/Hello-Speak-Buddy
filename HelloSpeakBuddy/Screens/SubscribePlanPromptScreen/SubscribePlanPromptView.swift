@@ -74,9 +74,15 @@ struct SubscribePlanPromptView: View {
           .frame(height: 25.0.screenScaled)
         
         /// プランに登録する
-        makeSubscribeButton().padding(
-          Constant.subscribeButtonPadding.screenScaled
-        )
+        /// (If iPad, set size of frame, else sets padding)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+          let subscribeButtonSize = Constant.subscribeButtonSize.screenScaled
+          makeSubscribeButton()
+            .frame(width: subscribeButtonSize.width, height: subscribeButtonSize.height)
+        } else {
+          makeSubscribeButton()
+            .padding(Constant.subscribeButtonPadding.screenScaled)
+        }
         Spacer().frame(height: 54.0.screenScaled)
       }
       .ignoresSafeArea(edges: [.bottom])

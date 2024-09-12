@@ -32,7 +32,7 @@ extension SubscribePlanPromptView {
       width: 38.0,
       height: 38.0
     )
-    
+        
     static let prottyOffsetFromGraph = CGSize(
       width: -37.52,
       height: -52.15
@@ -48,6 +48,11 @@ extension SubscribePlanPromptView {
     static let prottyImageSize = CGSize(
       width: 187.72,
       height: 170.0
+    )
+
+    static let subscribeButtonSize = CGSize(
+      width: 350.0,
+      height: 56.0
     )
 
     static let subscribeButtonPadding = EdgeInsets(
