@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Methods to create different views that composes this screen
 extension SubscribePlanPromptView {
   func makeNavBar() -> some View {
     HStack {
@@ -34,23 +35,34 @@ extension SubscribePlanPromptView {
       .multilineTextAlignment(.center)
   }
   
+  /// Makes bar graph with aligned image of Protty behind it.
   func makeGraphWithProttyView() -> some View {
     return VStack(alignment: .center) {
       HStack(alignment: .bottom) {
         Spacer()
         BarGraphView()
-          .background {
+          .background { /// for Protty
+            /// used to calculate the offset for Protty, by factoring the size of graph
+            /// provided in design and the size of this device
             GeometryReader { geometry in
-              let referenceSize = CGSize(width: 270.0, height: 325.0)
-              let widthScale = calculateDesignScaleReferingWidth(forSize: geometry.size, referenceSize: referenceSize)
-
-              let heightScale = calculateDesignScaleReferingHeight(forSize: geometry.size, referenceSize: referenceSize)
-
+              
+              /// for X axis offest
+              let widthScale = calculateDesignScaleReferingWidth(
+                forSize: geometry.size,
+                referenceSize: Constant.graphSize
+              )
+              /// for Y axis offset
+              let heightScale = calculateDesignScaleReferingHeight(
+                forSize: geometry.size,
+                referenceSize: Constant.graphSize
+              )
+              
               let prottyImageSizeScaled = CGSize(
                 width: Constant.prottyImageSize.width.screenScaled,
                 height: Constant.prottyImageSize.height.screenScaled
               )
 
+              /// here is where we are adjusting the offset accordinbg to device
               let prottyOffsetScaled = CGSize(
                 width: Constant.prottyOffsetFromGraph.width * widthScale,
                 height: Constant.prottyOffsetFromGraph.height * heightScale
@@ -58,6 +70,7 @@ extension SubscribePlanPromptView {
               
               Image("Protty")
                   .resizable()
+                  /// animate Protty when subscribe button tapped
                   .modifier(
                     SpeakBuddy.LivelyAnimation(
                       animate: animateProtty
@@ -105,9 +118,8 @@ extension SubscribePlanPromptView {
       Text("subscribeButtonTitle")
     }.buttonStyle(
       SpeakBuddy.ThemeButtonStyle()
-      /* Shadow is handled here instead of in buttonStyle, so as to handle case where
-       shadows may not be present at certain places (not in this use-case, for now)
-       */
+      /// Shadow is handled here instead of in buttonStyle, so as to handle case where
+      /// shadows may not be present at certain places (not in this use-case, for now)
     )
     .shadow(
       color: Constant.subscribeButtonShadowColor,

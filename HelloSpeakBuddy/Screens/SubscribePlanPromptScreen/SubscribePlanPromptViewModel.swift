@@ -8,6 +8,8 @@
 import Combine
 import SwiftUI
 
+/// Viewmodel uses Input/Output pattern
+/// reference https://medium.com/@mshcheglov/mvvm-design-pattern-with-combine-framework-on-ios-5ff911011b0b
 class SubscribePlanPromptViewModel: ObservableObject {
   struct Input {
     let viewDidAppear: AnyPublisher<Void, Never>

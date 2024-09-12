@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+/// for all the constants used in this view
 extension SubscribePlanPromptView {
   enum Constant {    
     static let titleLabelFontSize = 36.0
     static let levelUpTextFontSize = 20.0
+    static let graphSize = CGSize(width: 270.0, height: 325.0)
     
     static let subscribeButtonShadowColor = Color.fromRGBA256Color(
       red: 0,

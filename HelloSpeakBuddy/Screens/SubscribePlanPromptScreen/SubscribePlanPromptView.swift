@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 
 struct SubscribePlanPromptView: View {
-  @Environment(\.dismiss) private var dismiss
   @ObservedObject var viewModel: SubscribePlanPromptViewModel
   
   private var viewDidAppearSubject = PassthroughSubject<Void, Never>()
@@ -21,10 +20,13 @@ struct SubscribePlanPromptView: View {
   
   init(
     viewModel: SubscribePlanPromptViewModel,
+    /// passed in to control dismissal of this view (done is viewModel)
     isModalPresentationBinding: Binding<Bool>? = nil
   ) {
     self.viewModel = viewModel
     _isModalPresentationBinding = isModalPresentationBinding ?? .constant(false)
+    
+    /// setup view model with it's needed inputs
     viewModel.transform(
       input: SubscribePlanPromptViewModel.Input(
         viewDidAppear: viewDidAppearSubject.eraseToAnyPublisher(),
@@ -37,18 +39,25 @@ struct SubscribePlanPromptView: View {
   
   var body: some View {
     ZStack {
+      /// gradient BG
       GradientBackground().ignoresSafeArea()
       VStack {
         Spacer()
           .frame(height: 7.94.screenScaled)
+        
+        /// close button
         makeNavBar()
           .padding(Constant.navBarInsets.screenScaled)
         Spacer()
           .frame(height: 10.0.screenScaled)
         
+        /// Hello SpeakBuddy
         makeTitleLabel()
         Spacer()
           .frame(height: 85.0.screenScaled)
+        
+        /// graph with Protty in background.
+        /// Flag is used to animate after view appears
         if viewModel.output.showGraph {
           makeGraphWithProttyView().padding(Constant.graphPadding.screenScaled)
         } else {
@@ -57,10 +66,14 @@ struct SubscribePlanPromptView: View {
           
         Spacer()
           .frame(height: 30.0.screenScaled)
+        
+        /// スピークバディで
+        /// レベルアップ
         makePromoTextView()
         Spacer()
           .frame(height: 25.0.screenScaled)
         
+        /// プランに登録する
         makeSubscribeButton().padding(
           Constant.subscribeButtonPadding.screenScaled
         )
