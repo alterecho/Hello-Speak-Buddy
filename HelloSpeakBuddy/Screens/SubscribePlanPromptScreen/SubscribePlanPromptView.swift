@@ -53,6 +53,7 @@ struct SubscribePlanPromptView: View {
         
         /// Hello SpeakBuddy
         makeTitleLabel()
+        
         Spacer()
           .frame(height: 85.0.screenScaled)
         
@@ -70,6 +71,7 @@ struct SubscribePlanPromptView: View {
         /// スピークバディで
         /// レベルアップ
         makePromoTextView()
+        
         Spacer()
           .frame(height: 25.0.screenScaled)
         
@@ -83,6 +85,7 @@ struct SubscribePlanPromptView: View {
           makeSubscribeButton()
             .padding(Constant.subscribeButtonPadding.screenScaled)
         }
+        
         Spacer().frame(height: 54.0.screenScaled)
       }
       .ignoresSafeArea(edges: [.bottom])
