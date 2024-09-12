@@ -47,12 +47,12 @@ extension SubscribePlanPromptView {
             GeometryReader { geometry in
               
               /// for X axis offest
-              let widthScale = calculateDesignScaleReferingWidth(
+              let widthScale = ScreenScaleHelper.calculateDesignScaleReferingWidth(
                 forSize: geometry.size,
                 referenceSize: Constant.graphSize
               )
               /// for Y axis offset
-              let heightScale = calculateDesignScaleReferingHeight(
+              let heightScale = ScreenScaleHelper.calculateDesignScaleReferingHeight(
                 forSize: geometry.size,
                 referenceSize: Constant.graphSize
               )
