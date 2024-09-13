@@ -12,9 +12,16 @@
   - Screens: **Each screen will have a view and a view model**
       - WelcomeScreen: ** Prompts user to choose the method to present SubscribePlanPromptScreen **
       - SubscribePlanPromptScreen: ** Prompts user to subscribe **
-
+        
+**NOTES**
+- Design dimensions from Figma are placed in enums named `Constant` for each view:
+  <img width="586" alt="Screenshot 2024-09-13 at 09 57 38" src="https://github.com/user-attachments/assets/f1778fc2-eb9a-4bdf-9153-793fd446994f">
+- Strings are added in `Localizable.xcstrings`
+  <img width="552" alt="Screenshot 2024-09-13 at 09 58 47" src="https://github.com/user-attachments/assets/c1d456ec-403b-4a16-bb73-7af74d73082b">
 
 Recording: (on **iPhone 15**)
+
+
 
 https://github.com/user-attachments/assets/0804eeaa-5027-43d6-aa2a-5d0ce6c60db9
 
