@@ -11,9 +11,6 @@ import SwiftUI
 /// Viewmodel uses Input/Output pattern
 /// reference https://medium.com/@mshcheglov/mvvm-design-pattern-with-combine-framework-on-ios-5ff911011b0b
 class SubscribePlanPromptViewModel: ObservableObject {
-  enum Constant {
-    static let openAIKey =  "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"
-  }
   struct Input {
     let viewDidAppear: AnyPublisher<Void, Never>
     let subscribeButtonTapPublisher: AnyPublisher<Void, Never>
