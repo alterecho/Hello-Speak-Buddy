@@ -12,7 +12,7 @@ struct SubscribePlanPromptView: View {
   @ObservedObject var viewModel: SubscribePlanPromptViewModel
   
   private var viewDidAppearSubject = PassthroughSubject<Void, Never>()
-  private var signupButtonTapSubject = PassthroughSubject<Void, Never>()
+  private var subscribeButtonTapSubject = PassthroughSubject<Void, Never>()
   var closeButtonTapSubject = PassthroughSubject<Void, Never>()
   @State var animateProtty = false
   
@@ -30,7 +30,7 @@ struct SubscribePlanPromptView: View {
     viewModel.transform(
       input: SubscribePlanPromptViewModel.Input(
         viewDidAppear: viewDidAppearSubject.eraseToAnyPublisher(),
-        subscribeButtonTapPublisher: signupButtonTapSubject.eraseToAnyPublisher(),
+        subscribeButtonTapPublisher: subscribeButtonTapSubject.eraseToAnyPublisher(),
         closeButtonTapPublisher: closeButtonTapSubject.eraseToAnyPublisher(),
         isModalPresentationBinding: $isModalPresentationBinding
       )
@@ -109,6 +109,7 @@ extension SubscribePlanPromptView {
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
       animateProtty = false
     }
+    subscribeButtonTapSubject.send()
   }
   
   func vibrateForSubscribeButtonTap() {

@@ -10,26 +10,10 @@ import SwiftUI
 struct CloseButton: View {
   enum Constant {
     static let fontSize: CGFloat = 20
-    static let textColor = Color.fromRGBA256Color(
-      red: 50,
-      green: 53,
-      blue: 55,
-      alpha: 1.0
-    )
+    static let closeButtonText = "closeButtonText"
+    static let backgroundColorIdentifier = "closeButtonBackground"
+    static let shadowColorIdentifier = "closeButtonShadow"
     
-    static let backgroundColor = Color.fromRGBA256Color(
-      red: 255,
-      green: 255,
-      blue: 255,
-      alpha: 1.0
-    )
-    
-    static let shadowColor = Color.fromRGBA256Color(
-      red: 0,
-      green: 0,
-      blue: 0,
-      alpha: 0.15
-    )
     static let shadowRadius = 10.0
     static let shadowOffset = CGSize(width: 0.0, height: 2.0)
   }
@@ -44,16 +28,16 @@ struct CloseButton: View {
           )
         )
         .baselineOffset(4.0)
-        .foregroundStyle(Constant.textColor)
+        .foregroundStyle(Color(Constant.closeButtonText))
         .frame(
           width: geometry.size.width,
           height: geometry.size.height,
           alignment: .center
         )
-        .background(Constant.backgroundColor)
+        .background(Constant.backgroundColorIdentifier.color)
         .cornerRadius(geometry.size.height * 0.5)
         .shadow(
-          color: Constant.shadowColor,
+          color: Constant.shadowColorIdentifier.color,
           radius: Constant.shadowRadius,
           x: Constant.shadowOffset.width,
           y: Constant.shadowOffset.height

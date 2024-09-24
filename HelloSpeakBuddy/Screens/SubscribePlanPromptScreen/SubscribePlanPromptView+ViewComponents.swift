@@ -122,7 +122,7 @@ extension SubscribePlanPromptView {
       /// shadows may not be present at certain places (not in this use-case, for now)
     )
     .shadow(
-      color: Constant.subscribeButtonShadowColor,
+      color: Constant.subscribeButtonShadowColorIdentifier.color,
       radius: 10.0,
       x: 0.0,
       y: 2.0

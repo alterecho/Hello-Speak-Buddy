@@ -10,18 +10,8 @@ import SwiftUI
 extension SpeakBuddy {
   struct GradientTextModifier: ViewModifier {
     private enum Constant {
-      static let gradientColorStart = Color.fromRGBA256Color(
-        red: 111,
-        green: 212,
-        blue: 255,
-        alpha: 1.0
-      )
-      static let gradientColorEnd = Color.fromRGBA256Color(
-        red: 0,
-        green: 117,
-        blue: 255,
-        alpha: 1.0
-      )
+      static let gradientStartColorIdentifier = "gradientTextModifierStart"
+      static let gradientEndColorIdentifier = "gradientTextModifierEnd"
       
       static let fontSize: CGFloat = 30.0
     }
@@ -35,8 +25,8 @@ extension SpeakBuddy {
 
       LinearGradient(
         colors: [
-          Constant.gradientColorStart,
-          Constant.gradientColorEnd
+          Constant.gradientStartColorIdentifier.color,
+          Constant.gradientEndColorIdentifier.color
         ],
         startPoint: .top,
         endPoint: .bottom

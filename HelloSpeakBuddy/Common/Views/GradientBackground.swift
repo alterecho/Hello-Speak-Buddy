@@ -9,26 +9,15 @@ import SwiftUI
 
 struct GradientBackground: View {
   enum Constant {
-    static let backgroundGradientStartColor = Color.fromRGBA256Color(
-      red: 213,
-      green: 210,
-      blue: 255,
-      alpha: 1.0
-    )
-    
-    static let backgroundGradientEndColor = Color.fromRGBA256Color(
-      red: 255,
-      green: 255,
-      blue: 255,
-      alpha: 1.0
-    )
+    static let backgroundGradientStartColorIdentifier = "backgroundGradientStartColor"
+    static let backgroundGradientEndColorIdentifier = "backgroundGradientEndColor"
   }
   
   var body: some View {
     LinearGradient(
       colors: [
-        Constant.backgroundGradientStartColor,
-        Constant.backgroundGradientEndColor
+        Constant.backgroundGradientStartColorIdentifier.color,
+        Constant.backgroundGradientEndColorIdentifier.color
       ],
       startPoint: .top,
       endPoint: .bottom

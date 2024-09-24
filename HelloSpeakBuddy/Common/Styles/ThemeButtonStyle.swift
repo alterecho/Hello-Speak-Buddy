@@ -8,31 +8,16 @@
 import SwiftUI
 
 extension SpeakBuddy {
-  // Style that rounds a button, adds a border and sets background color the theme of the app
+  // Style that rounds a button, adds a border and sets background color the theme of the app (used ifor subscribe button)
   struct ThemeButtonStyle: ButtonStyle {
     enum Constant {
-      static let backgroundColor = Color.fromRGBA256Color(
-        red: 59,
-        green: 167,
-        blue: 255,
-        alpha: 1.0
-      )
+      static let backgroundColorIdentifier = "themeButtonBackground"
       
       static let fontSize = 16.0
       
-      static let textColor = Color.fromRGBA256Color(
-        red: 255,
-        green: 255,
-        blue: 255,
-        alpha: 1.0
-      )
+      static let textColorIdentifier = "themeButtonText"
 
-      static let borderColor = Color.fromRGBA256Color(
-        red: 255,
-        green: 255,
-        blue: 255,
-        alpha: 1.0
-      )
+      static let borderColorIdentifier = "themeButtonBorder"
     }
     
     func makeBody(configuration: Configuration) -> some View {
@@ -43,18 +28,18 @@ extension SpeakBuddy {
             size: Constant.fontSize.screenScaled
           )
         )
-        .foregroundStyle(Constant.textColor)
+        .foregroundStyle(Constant.textColorIdentifier.color)
         .foregroundColor(
           .white
         )
         .padding()
         .frame(maxWidth: .infinity)
-        .background(Constant.backgroundColor)
+        .background(Constant.backgroundColorIdentifier.color)
         .cornerRadius(28.66)
         .overlay {
           RoundedRectangle(cornerRadius: 28.66)
             .stroke(
-              Constant.borderColor,
+              Constant.borderColorIdentifier.color,
               lineWidth: 1.0
             )
         }.scaleEffect(

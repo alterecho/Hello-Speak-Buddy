@@ -12,20 +12,8 @@ extension BarGraphView {
   struct ItemView: View {
     enum Constant {
       static let verticalSpacing = 7.0
-      static let gradientStart = Color.fromRGBA256Color(
-        red: 31,
-        green: 143,
-        blue: 255,
-        alpha: 1.0
-      )
-      
-      static let gradientEnd = Color.fromRGBA256Color(
-        red: 88,
-        green: 192,
-        blue: 255,
-        alpha: 1.0
-      )
-      
+      static let gradientStartColorIdentifier = "barGradientStart"
+      static let gradientEndColorIdentifier = "barGradientEnd"
       static let labelFontSize = 12.0
       static let labelSize = CGSize(
         width: 42.8,
@@ -74,8 +62,8 @@ extension BarGraphView {
             Rectangle().fill(
               LinearGradient(
                 colors: [
-                  Constant.gradientStart,
-                  Constant.gradientEnd
+                  Constant.gradientStartColorIdentifier.color,
+                  Constant.gradientEndColorIdentifier.color
                 ],
                 startPoint: .top,
                 endPoint: .bottom

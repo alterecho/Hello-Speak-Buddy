@@ -13,13 +13,7 @@ extension SubscribePlanPromptView {
     static let titleLabelFontSize = 36.0
     static let levelUpTextFontSize = 20.0
     static let graphSize = CGSize(width: 270.0, height: 325.0)
-    
-    static let subscribeButtonShadowColor = Color.fromRGBA256Color(
-      red: 0,
-      green: 0,
-      blue: 0,
-      alpha: 0.2
-    )
+    static let subscribeButtonShadowColorIdentifier = "subscribeButtonShadow"
         
     static let navBarInsets = EdgeInsets(
       top: 0.0,
