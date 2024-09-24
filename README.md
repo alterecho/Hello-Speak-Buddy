@@ -22,22 +22,30 @@
   <img width="552" alt="Screenshot 2024-09-13 at 09 58 47" src="https://github.com/user-attachments/assets/c1d456ec-403b-4a16-bb73-7af74d73082b">
 
 Recording: (on **iPhone 15**)
-
-
-
 https://github.com/user-attachments/assets/0804eeaa-5027-43d6-aa2a-5d0ce6c60db9
 
- **iPhone 15:**
+| Device | Light | Dark |
+| :-------------: |:-------------:| :-----:|
+|  **iPhone 15**      | !![iphone15](https://github.com/user-attachments/assets/63289346-6cab-469c-aa7f-13daced7ce32) | ![iphone15-dark](https://github.com/user-attachments/assets/7209e9bc-acf2-47d9-8fe3-49e408f72bed) |
+| **iPhone SE (with touch ID)** | ![iphoneSE](https://github.com/user-attachments/assets/c91e222e-9788-458c-8a97-103bc67f2af1) | ![iphoneSE-dark](https://github.com/user-attachments/assets/fa2e980b-b4bf-4e73-985b-a5845473a8d8) |
+| **iPad Air 11-inch** | ![ipad-air-11](https://github.com/user-attachments/assets/ec22eacb-e521-437a-98e1-39453d1b7b61) | ![ipad-air-11-dark](https://github.com/user-attachments/assets/17988c4c-eec2-4bc9-befd-5dc45af79631)  |
  
- ![Simulator Screenshot - iPhone 15 - 2024-09-12 at 11 48 54](https://github.com/user-attachments/assets/1efd1e0c-a3c8-4205-9531-2c60204386cb)
+ 
+ 
 
-**iPhone SE (with touch ID):**
 
-![Simulator Screenshot - iPhone SE (3rd generation) - 2024-09-12 at 11 54 48](https://github.com/user-attachments/assets/e41ad069-d43e-4298-bc42-e0fda08874e2)
 
-**iPad Air 11-inch:**
 
-![Simulator Screenshot - iPad Air 11-inch (M2) - 2024-09-12 at 11 49 59](https://github.com/user-attachments/assets/f4b5eff0-e51b-4948-be4f-0a48c5951763)
+
+
+
+
+
+
+
+
+
+
 
 
   
