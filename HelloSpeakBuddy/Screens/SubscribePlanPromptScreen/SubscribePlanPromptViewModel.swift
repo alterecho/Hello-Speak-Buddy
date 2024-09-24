@@ -7,7 +7,6 @@
 
 import Combine
 import SwiftUI
-import OpenAI
 
 /// Viewmodel uses Input/Output pattern
 /// reference https://medium.com/@mshcheglov/mvvm-design-pattern-with-combine-framework-on-ios-5ff911011b0b
@@ -36,34 +35,7 @@ class SubscribePlanPromptViewModel: ObservableObject {
     isModalPresentationBinding: .constant(false)
   )
   
-  struct CompletionsResult: Codable, Equatable {
-//    static func == (lhs: SubscribePlanPromptViewModel.CompletionsResult, rhs: SubscribePlanPromptViewModel.CompletionsResult) -> Bool {
-//      return true
-//    }
-    
-      public struct Choice: Codable, Equatable {
-          public let text: String
-          public let index: Int
-      }
-
-      public let id: String
-      public let object: String
-      public let created: TimeInterval
-      public let model: Model
-      public let choices: [Choice]
-//      public let usage: Usage
-  }
   
-  
-  let openAI: OpenAI
-  init() {
-    let configuration = OpenAI.Configuration(
-      token: Constant.openAIKey,
-      timeoutInterval: 60.0
-    )
-    openAI = OpenAI(configuration: configuration)
-  }
-    
   func transform(input: Input) {
     output = Output(
       showGraph: false,
@@ -75,27 +47,7 @@ class SubscribePlanPromptViewModel: ObservableObject {
     }.store(in: &cancellables)
 
     input.subscribeButtonTapPublisher.sink { [weak self] _ in
-      self?.output.loading = true
-      
-      let query = CompletionsQuery(
-        model: .gpt3_5Turbo,
-        prompt: "What is 42?",
-        temperature: 0,
-        maxTokens: 100,
-        topP: 1,
-        frequencyPenalty: 0,
-        presencePenalty: 0,
-        stop: ["\\n"],
-        user: ""
-      )
-      self?.openAI.completions(query: query) { result in
-        //Handle result here
-      }
-      //or
-//      do {
-//        let result = try? await openAI.completions(query: query)
-//      } catch {
-//
+      self?.output.loading = true      
     }.store(in: &cancellables)
     
     input.closeButtonTapPublisher.sink { [weak self] _ in

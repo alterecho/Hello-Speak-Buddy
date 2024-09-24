@@ -35,7 +35,6 @@
 		577D04C32C900EC4000EF3EC /* WelcomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D04C22C900EC4000EF3EC /* WelcomeScreenView.swift */; };
 		579C44042C8849380091CEB4 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C44032C8849380091CEB4 /* Color+Extensions.swift */; };
 		579C44062C894F260091CEB4 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C44052C894F260091CEB4 /* CloseButton.swift */; };
-		57ACF88D2C9336D800E6BBE7 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 57ACF88C2C9336D800E6BBE7 /* OpenAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57ACF88D2C9336D800E6BBE7 /* OpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +295,6 @@
 			);
 			name = HelloSpeakBuddy;
 			packageProductDependencies = (
-				57ACF88C2C9336D800E6BBE7 /* OpenAI */,
 			);
 			productName = HelloSpeakBuddy;
 			productReference = 57714E062C830B580015F98E /* HelloSpeakBuddy.app */;
@@ -374,7 +371,6 @@
 			);
 			mainGroup = 57714DFD2C830B580015F98E;
 			packageReferences = (
-				57ACF88B2C9336D800E6BBE7 /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			productRefGroup = 57714E072C830B580015F98E /* Products */;
 			projectDirPath = "";
@@ -771,25 +767,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		57ACF88B2C9336D800E6BBE7 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		57ACF88C2C9336D800E6BBE7 /* OpenAI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 57ACF88B2C9336D800E6BBE7 /* XCRemoteSwiftPackageReference "OpenAI" */;
-			productName = OpenAI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 57714DFE2C830B580015F98E /* Project object */;
 }
