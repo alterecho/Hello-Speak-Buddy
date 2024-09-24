@@ -29,9 +29,6 @@ extension SpeakBuddy {
           )
         )
         .foregroundStyle(Constant.textColorIdentifier.color)
-        .foregroundColor(
-          .white
-        )
         .padding()
         .frame(maxWidth: .infinity)
         .background(Constant.backgroundColorIdentifier.color)

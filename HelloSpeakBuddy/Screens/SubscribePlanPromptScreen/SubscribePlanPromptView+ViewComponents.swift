@@ -31,7 +31,7 @@ extension SubscribePlanPromptView {
           weight: .bold,
           design: .default
         )
-      )
+      ).foregroundStyle(Constant.titleLabelTextColorIdentifier.color)
       .multilineTextAlignment(.center)
   }
   

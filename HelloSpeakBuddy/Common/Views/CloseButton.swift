@@ -11,6 +11,7 @@ struct CloseButton: View {
   enum Constant {
     static let fontSize: CGFloat = 20
     static let closeButtonText = "closeButtonText"
+    static let closeButtonTextColorIdentifier = "closeButtonText"
     static let backgroundColorIdentifier = "closeButtonBackground"
     static let shadowColorIdentifier = "closeButtonShadow"
     
@@ -28,7 +29,7 @@ struct CloseButton: View {
           )
         )
         .baselineOffset(4.0)
-        .foregroundStyle(Color(Constant.closeButtonText))
+        .foregroundStyle(Constant.closeButtonTextColorIdentifier.color)
         .frame(
           width: geometry.size.width,
           height: geometry.size.height,

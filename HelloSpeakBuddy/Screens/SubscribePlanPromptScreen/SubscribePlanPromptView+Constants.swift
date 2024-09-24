@@ -11,6 +11,8 @@ import SwiftUI
 extension SubscribePlanPromptView {
   enum Constant {    
     static let titleLabelFontSize = 36.0
+    static let titleLabelTextColorIdentifier = "titleLabelText"
+
     static let levelUpTextFontSize = 20.0
     static let graphSize = CGSize(width: 270.0, height: 325.0)
     static let subscribeButtonShadowColorIdentifier = "subscribeButtonShadow"
