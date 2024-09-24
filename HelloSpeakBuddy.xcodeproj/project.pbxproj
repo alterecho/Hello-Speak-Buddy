@@ -11,6 +11,7 @@
 		570A85622CA1B98800335BF1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570A85612CA1B98800335BF1 /* Colors.xcassets */; };
 		570A85642CA25FA000335BF1 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A85632CA25FA000335BF1 /* String+Extensions.swift */; };
 		570A85662CA25FC800335BF1 /* ColorIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A85652CA25FC800335BF1 /* ColorIdentifiable.swift */; };
+		570A85682CA277C200335BF1 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A85672CA277C200335BF1 /* Localizable.swift */; };
 		57207C3A2C8986FE00F7D0F8 /* BarGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57207C392C8986FE00F7D0F8 /* BarGraphView.swift */; };
 		574009B92C92F5C000EDAFAC /* Values+ScreenScalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574009B82C92F5C000EDAFAC /* Values+ScreenScalable.swift */; };
 		574009BB2C92F65900EDAFAC /* ScreenScaleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574009BA2C92F65900EDAFAC /* ScreenScaleHelper.swift */; };
@@ -59,6 +60,7 @@
 		570A85612CA1B98800335BF1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		570A85632CA25FA000335BF1 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		570A85652CA25FC800335BF1 /* ColorIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIdentifiable.swift; sourceTree = "<group>"; };
+		570A85672CA277C200335BF1 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		57207C392C8986FE00F7D0F8 /* BarGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraphView.swift; sourceTree = "<group>"; };
 		574009B82C92F5C000EDAFAC /* Values+ScreenScalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Values+ScreenScalable.swift"; sourceTree = "<group>"; };
 		574009BA2C92F65900EDAFAC /* ScreenScaleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenScaleHelper.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				576D01092C8B0AFD0087C0EA /* ScreenScalable.swift */,
 				570A85652CA25FC800335BF1 /* ColorIdentifiable.swift */,
+				570A85672CA277C200335BF1 /* Localizable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57207C3A2C8986FE00F7D0F8 /* BarGraphView.swift in Sources */,
+				570A85682CA277C200335BF1 /* Localizable.swift in Sources */,
 				574A8E312C907F7700860C5E /* GradientBackground.swift in Sources */,
 				576D010C2C8B1B4F0087C0EA /* SubscribePlanPromptView+ViewComponents.swift in Sources */,
 				576D010A2C8B0AFD0087C0EA /* ScreenScalable.swift in Sources */,

@@ -20,31 +20,40 @@ struct WelcomeScreenView: View {
 }
 
 extension WelcomeScreenView {
+  private enum Constant {
+    static let chooseSubscribeNavigationStyleTextIdentifier = "chooseSubscribeNavigationStyle"
+    static let navigationToSubscribeScreenTextIdentifier = "navigationToSubscribeScreen"
+    static let showSubscribePopupTextIdentifier = "showSubscribePopup"
+    static let showSubscribeFullscreenTextIdentifier = "showSubscribeFullscreen"
+  }
+}
+
+extension WelcomeScreenView {
   private func makeContentView() -> some View {
     ZStack {
       GradientBackground()
       VStack(spacing: 10.0) {
-        Text("chooseSubscribeNavigationStyle")
+        Text(Constant.chooseSubscribeNavigationStyleTextIdentifier.localized)
           .font(.title2)
           .multilineTextAlignment(.center)
         
         Button {
           showSubscribeViewWithNavigationStack = true
         } label: {
-          Text("navigationToSubscribeScreen")
+          Text(Constant.navigationToSubscribeScreenTextIdentifier.localized)
             .font(.title)
         }
         
         Button {
           showSubscribeViewModally = true
         } label: {
-          Text("showSubscribePopup")
+          Text(Constant.showSubscribePopupTextIdentifier.localized)
             .font(.title)
         }
         Button {
           showSubscribeViewAsFullScreenCover = true
         } label: {
-          Text("showSubscribeFullscreen")
+          Text(Constant.showSubscribeFullscreenTextIdentifier.localized)
             .font(.title)
         }
       }.padding()

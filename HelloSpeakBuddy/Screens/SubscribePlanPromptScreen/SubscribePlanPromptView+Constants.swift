@@ -9,7 +9,11 @@ import SwiftUI
 
 /// for all the constants used in this view
 extension SubscribePlanPromptView {
-  enum Constant {    
+  enum Constant {
+    static let levelUpTextIdentifier = "levelUpText"
+    static let speakBuddyTextIdentifier = "speakBuddyText"
+    static let subscribeButtonTitleIdentifier = "subscribeButtonTitle"
+    
     static let titleLabelFontSize = 36.0
     static let titleLabelTextColorIdentifier = "titleLabelText"
 

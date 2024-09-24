@@ -10,7 +10,7 @@ import SwiftUI
 struct CloseButton: View {
   enum Constant {
     static let fontSize: CGFloat = 20
-    static let closeButtonText = "closeButtonText"
+    static let closeButtonTextIdentifier = "closeButtonText"
     static let closeButtonTextColorIdentifier = "closeButtonText"
     static let backgroundColorIdentifier = "closeButtonBackground"
     static let shadowColorIdentifier = "closeButtonShadow"
@@ -21,7 +21,7 @@ struct CloseButton: View {
   
   var body: some View {
     GeometryReader { geometry in
-      Text("closeButtonText")
+      Text(Constant.closeButtonTextIdentifier.localized)
         .font(
           .custom(
             "HiraginoSans-W6",

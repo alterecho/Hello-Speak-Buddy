@@ -24,7 +24,7 @@ extension SubscribePlanPromptView {
   }
   
   func makeTitleLabel() -> some View {
-    Text("pageTitle")
+    Text("pageTitle".localized)
       .font(
         .system(
           size: Constant.titleLabelFontSize.screenScaled,
@@ -102,11 +102,11 @@ extension SubscribePlanPromptView {
     ) ?? .systemFont(ofSize: fontSize)
     
     return VStack {
-      Text("levelUpText")
+      Text(Constant.levelUpTextIdentifier.localized)
         .font(Font(uiFont))
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity, alignment: .center)
-      Text("speakBuddyText")
+      Text(Constant.speakBuddyTextIdentifier.localized)
         .modifier(SpeakBuddy.GradientTextModifier())
     }
   }
@@ -115,7 +115,7 @@ extension SubscribePlanPromptView {
     return Button {
       performSubscribeButtonAction()
     } label: {
-      Text("subscribeButtonTitle")
+      Text(Constant.subscribeButtonTitleIdentifier.localized)
     }.buttonStyle(
       SpeakBuddy.ThemeButtonStyle()
       /// Shadow is handled here instead of in buttonStyle, so as to handle case where

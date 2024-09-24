@@ -80,7 +80,7 @@ extension BarGraphView {
             )
           }
         }
-        Text(LocalizedStringKey(model.label))
+        Text(model.label.localized)
           .font(
             Font(
               UIFont(

@@ -12,3 +12,9 @@ extension String: ColorIdentifiable {
     return Color(self)
   }
 }
+
+extension String: Localizable {
+  var localized: LocalizedStringKey {
+    return LocalizedStringKey(self)
+  }
+}
