@@ -23,9 +23,10 @@
 - Colors are defined in `Colors.xcassets`:
 <img width="552" alt="Screenshot 2024-09-13 at 09 58 47" src="https://github.com/user-attachments/assets/c1d456ec-403b-4a16-bb73-7af74d73082b">
 
-
 Recording: (on **iPhone 15**)
+
 https://github.com/user-attachments/assets/0804eeaa-5027-43d6-aa2a-5d0ce6c60db9
+
 
 | Device | Light | Dark |
 | :-------------: |:-------------:| :-----:|
