@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct HelloSpeakBuddyApp: App {
     var body: some Scene {
+      
         WindowGroup {
-            ContentView()
+          WelcomeScreenView()
         }
     }
 }
