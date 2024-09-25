@@ -27,17 +27,18 @@ final class SubscribePlanPromptViewModelTests: XCTestCase {
     closeButtonTapPublisher = PassthroughSubject<Void, Never>()
     isModalPresentation = false
     sut = SubscribePlanPromptViewModel()
+    let binding = Binding(
+      get: { [weak self] in
+        self?.isModalPresentation ?? false
+      }, set: { [weak self] value, _ in
+        self?.isModalPresentation = value
+      })
     
     let input = SubscribePlanPromptViewModel.Input(
       viewDidAppear: viewDidAppear.eraseToAnyPublisher(),
       subscribeButtonTapPublisher: subscribeButtonTapPublisher.eraseToAnyPublisher(),
       closeButtonTapPublisher: closeButtonTapPublisher.eraseToAnyPublisher(),
-      isModalPresentationBinding: Binding(
-        get: { [weak self] in
-          self?.isModalPresentation ?? false
-        }, set: { [weak self] value, _ in
-          self?.isModalPresentation = value
-        })
+      isModalPresentationBinding: binding
     )
     sut.transform(input: input)
   }

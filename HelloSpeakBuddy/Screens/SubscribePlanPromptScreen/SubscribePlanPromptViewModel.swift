@@ -51,7 +51,8 @@ class SubscribePlanPromptViewModel: ObservableObject {
       guard let self else {
         return
       }
-      output.isModalPresentationBinding.wrappedValue = false      
+      output.isModalPresentationBinding.wrappedValue = false
+      output = output
     }.store(in: &cancellables)
   }
 }

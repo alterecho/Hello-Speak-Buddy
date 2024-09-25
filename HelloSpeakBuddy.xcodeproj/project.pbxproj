@@ -27,7 +27,6 @@
 		57714E0A2C830B580015F98E /* HelloSpeakBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E092C830B580015F98E /* HelloSpeakBuddyApp.swift */; };
 		57714E0E2C830B5B0015F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57714E0D2C830B5B0015F98E /* Assets.xcassets */; };
 		57714E112C830B5B0015F98E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57714E102C830B5B0015F98E /* Preview Assets.xcassets */; };
-		57714E252C830B5C0015F98E /* HelloSpeakBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E242C830B5C0015F98E /* HelloSpeakBuddyUITests.swift */; };
 		57714E272C830B5C0015F98E /* HelloSpeakBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E262C830B5C0015F98E /* HelloSpeakBuddyUITestsLaunchTests.swift */; };
 		57714E342C8316410015F98E /* SubscribePlanPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E332C8316410015F98E /* SubscribePlanPromptView.swift */; };
 		57714E382C83165A0015F98E /* SubscribePlanPromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */; };
@@ -78,7 +77,6 @@
 		57714E102C830B5B0015F98E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57714E162C830B5B0015F98E /* HelloSpeakBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloSpeakBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57714E202C830B5C0015F98E /* HelloSpeakBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloSpeakBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57714E242C830B5C0015F98E /* HelloSpeakBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSpeakBuddyUITests.swift; sourceTree = "<group>"; };
 		57714E262C830B5C0015F98E /* HelloSpeakBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSpeakBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		57714E332C8316410015F98E /* SubscribePlanPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePlanPromptView.swift; sourceTree = "<group>"; };
 		57714E372C83165A0015F98E /* SubscribePlanPromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribePlanPromptViewModel.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 		57714E232C830B5C0015F98E /* HelloSpeakBuddyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				57714E242C830B5C0015F98E /* HelloSpeakBuddyUITests.swift */,
 				57714E262C830B5C0015F98E /* HelloSpeakBuddyUITestsLaunchTests.swift */,
 			);
 			path = HelloSpeakBuddyUITests;
@@ -452,7 +449,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57714E252C830B5C0015F98E /* HelloSpeakBuddyUITests.swift in Sources */,
 				57714E272C830B5C0015F98E /* HelloSpeakBuddyUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
