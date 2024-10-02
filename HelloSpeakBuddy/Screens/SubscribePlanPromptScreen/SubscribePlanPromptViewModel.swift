@@ -32,7 +32,6 @@ class SubscribePlanPromptViewModel: ObservableObject {
     isModalPresentationBinding: .constant(false)
   )
   
-  
   func transform(input: Input) {
     output = Output(
       showGraph: false,

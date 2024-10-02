@@ -90,7 +90,7 @@ extension WelcomeScreenView {
   
   private func makeSubscribePlanPromptView(
     presentationBinding: Binding<Bool>? = nil
-  ) -> SubscribePlanPromptView{
+  ) -> SubscribePlanPromptView {
     return SubscribePlanPromptView(
       viewModel: SubscribePlanPromptViewModel(),
       isModalPresentationBinding: presentationBinding

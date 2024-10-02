@@ -52,7 +52,6 @@ extension BarGraphView {
         return Path(uiPath.cgPath)
       }
       
-      
     }
     var body: some View {
       VStack(spacing: Constant.verticalSpacing.screenScaled) {
@@ -72,7 +71,15 @@ extension BarGraphView {
             .frame(
               height: geometry.size.height * Double(model.value) / 100.0 * heightFactor
             )
-            .clipShape(RoundedCornerRectangle(cornersToRound: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 2.73, height: 2.73)))
+            .clipShape(
+              RoundedCornerRectangle(
+                cornersToRound: [
+                  .bottomLeft,
+                  .bottomRight
+                ],
+                cornerRadii: CGSize(width: 2.73, height: 2.73)
+              )
+            )
             .scaleEffect(
               x: 1,
               y: -1,

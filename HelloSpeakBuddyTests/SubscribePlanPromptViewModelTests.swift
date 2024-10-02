@@ -77,7 +77,7 @@ final class SubscribePlanPromptViewModelTests: XCTestCase {
   func testCloseButtonTap_pageIsDismissed() {
     // given
     let expectation = expectation(description: "page loading indicator is shown expectation")
-    sut.$output.dropFirst().sink { [weak self] output in
+    sut.$output.dropFirst().sink { [weak self] _ in
       guard let self else {
         XCTFail()
         return

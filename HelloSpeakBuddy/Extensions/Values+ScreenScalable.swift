@@ -22,7 +22,6 @@ extension CGFloat: ScreenScalable {
   }
 }
 
-
 extension Int {
   var widthScaled: Self {
     return Int(Double(self).screenScaled)

@@ -73,4 +73,3 @@ extension SubscribePlanPromptView {
     viewModel: SubscribePlanPromptViewModel()
   )
 }
-

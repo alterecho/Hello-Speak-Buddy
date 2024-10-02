@@ -8,7 +8,8 @@
 import SwiftUI
 
 extension SpeakBuddy {
-  // Style that rounds a button, adds a border and sets background color the theme of the app (used ifor subscribe button)
+  /// Style that rounds a button, adds a border and sets background color the theme 
+  /// of the app (used ifor subscribe button)
   struct ThemeButtonStyle: ButtonStyle {
     enum Constant {
       static let backgroundColorIdentifier = "themeButtonBackground"
