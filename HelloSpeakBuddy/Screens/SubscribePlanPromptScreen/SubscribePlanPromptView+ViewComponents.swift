@@ -37,7 +37,7 @@ extension SubscribePlanPromptView {
   
   /// Makes bar graph with aligned image of Protty behind it.
   func makeGraphWithProttyView() -> some View {
-    return VStack(alignment: .center) {
+    VStack(alignment: .center) {
       HStack(alignment: .bottom) {
         Spacer()
         BarGraphView()
@@ -112,7 +112,7 @@ extension SubscribePlanPromptView {
   }
   
   func makeSubscribeButton() -> some View {
-    return Button {
+    Button {
       performSubscribeButtonAction()
     } label: {
       Text(Constant.subscribeButtonTitleIdentifier.localized)

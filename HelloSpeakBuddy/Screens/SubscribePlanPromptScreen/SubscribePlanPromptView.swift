@@ -98,7 +98,7 @@ struct SubscribePlanPromptView: View {
   }
   
   var activityIndicator: some View {
-    return ProgressView().progressViewStyle(.circular)
+    ProgressView().progressViewStyle(.circular)
   }
 }
 

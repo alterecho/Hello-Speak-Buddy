@@ -22,14 +22,14 @@ struct ScreenScaleHelper {
     forSize size: CGSize,
     referenceSize: CGSize = Constant.referenceSize
   ) -> CGFloat {
-    return size.width / referenceSize.height
+    size.width / referenceSize.height
   }
 
   static func calculateDesignScaleReferingHeight(
     forSize size: CGSize,
     referenceSize: CGSize = Constant.referenceSize
   ) -> CGFloat {
-    return size.height / referenceSize.height
+    size.height / referenceSize.height
   }
 
   static func calculateDesignScale(

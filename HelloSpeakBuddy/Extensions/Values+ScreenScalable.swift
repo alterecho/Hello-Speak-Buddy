@@ -18,23 +18,23 @@ extension Double: ScreenScalable {
 
 extension CGFloat: ScreenScalable {
   var screenScaled: CGFloat {
-    return Double(self).screenScaled
+    Double(self).screenScaled
   }
 }
 
 extension Int {
   var widthScaled: Self {
-    return Int(Double(self).screenScaled)
+    Int(Double(self).screenScaled)
   }
   
   var heightScaled: Self {
-    return Int(Double(self).screenScaled)
+    Int(Double(self).screenScaled)
   }
 }
 
 extension CGSize: ScreenScalable {
   var screenScaled: Self {
-    return CGSize(
+    CGSize(
       width: Double(width).screenScaled,
       height: Double(height).screenScaled
     )
@@ -43,7 +43,7 @@ extension CGSize: ScreenScalable {
 
 extension UIEdgeInsets: ScreenScalable {
   var screenScaled: Self {
-    return UIEdgeInsets(
+    UIEdgeInsets(
       top: Double(top).screenScaled,
       left: Double(left).screenScaled,
       bottom: Double(bottom).screenScaled,
@@ -54,7 +54,7 @@ extension UIEdgeInsets: ScreenScalable {
 
 extension EdgeInsets: ScreenScalable {
   var screenScaled: Self {
-    return EdgeInsets(
+    EdgeInsets(
       top: Double(top).screenScaled,
       leading: Double(leading).screenScaled,
       bottom: Double(bottom).screenScaled,

@@ -9,12 +9,12 @@ import SwiftUI
 
 extension String: ColorIdentifiable {
   var color: Color {
-    return Color(self)
+    Color(self)
   }
 }
 
 extension String: Localizable {
   var localized: LocalizedStringKey {
-    return LocalizedStringKey(self)
+    LocalizedStringKey(self)
   }
 }

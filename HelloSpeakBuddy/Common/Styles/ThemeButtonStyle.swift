@@ -22,7 +22,7 @@ extension SpeakBuddy {
     }
     
     func makeBody(configuration: Configuration) -> some View {
-      return configuration.label
+      configuration.label
         .font(
           .custom(
             "HiraginoSans-W6",

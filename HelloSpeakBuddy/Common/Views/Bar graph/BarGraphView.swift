@@ -33,7 +33,7 @@ struct BarGraphView: View {
   }
   
   var body: some View {
-      return HStack(
+      HStack(
         alignment: .bottom,
         spacing: Constant.barSpacing.screenScaled
       ) {
